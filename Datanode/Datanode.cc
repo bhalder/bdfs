@@ -1,5 +1,5 @@
 #include <grpcpp/grpcpp.h>
-#include "proto-out/datanode.grpc.pb.h"
+#include "../proto-out/datanode.grpc.pb.h"
 #include <unistd.h>
 
 using grpc::Channel;
