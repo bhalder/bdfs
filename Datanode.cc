@@ -41,6 +41,10 @@ class DataNode {
     // Act upon its status.
     if (status.ok()) {
       /* Set the keepalive duration */
+      if(reply.has_server_meta()) {
+          keepalive_duration = reply.server_meta().keepalive_timeout();
+      }
+  
       return true;
     } else {
       std::cout << status.error_code() << ": " << status.error_message()
