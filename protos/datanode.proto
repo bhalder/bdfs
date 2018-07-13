@@ -2,7 +2,6 @@ syntax = "proto3";
 package bdfs;
 
 message Empty {
-
 }
 
 message node_meta {

@@ -13,6 +13,7 @@ using bdfs::disconnect_req;
 using bdfs::disconnect_resp;
 using bdfs::datanode_protocol;
 
+namespace bdfs {
 class DataNode {
  public:
   DataNode(std::shared_ptr<Channel> channel)
@@ -131,6 +132,8 @@ class DataNode {
   std::unique_ptr<datanode_protocol::Stub> stub_;
 };
 
+} // namespace bdfs
+
 int main(int argc, char** argv) {
   // Instantiate the client. It requires a channel, out of which the actual RPCs
   // are created. This channel models a connection to an endpoint (in this case,
@@ -141,7 +144,7 @@ int main(int argc, char** argv) {
       return 0;
   }
 
-  DataNode datanode(grpc::CreateChannel(
+  bdfs::DataNode datanode(grpc::CreateChannel(
   "localhost:50051", grpc::InsecureChannelCredentials()));
 
   // CONNECT

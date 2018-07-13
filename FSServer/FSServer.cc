@@ -7,6 +7,8 @@ using grpc::ServerBuilder;
 using grpc::ServerContext;
 using grpc::Status;
 
+namespace bdfs {
+
 class FSServerImpl final : public bdfs::datanode_protocol::Service{
    
     ::grpc::Status SendKeepalive(::grpc::ServerContext* context, const ::bdfs::keepalive_req* request, ::bdfs::keepalive_resp* response) {
@@ -59,9 +61,10 @@ void RunServer() {
   // responsible for shutting down the server for this call to ever return.
   server->Wait();
 }
+} // namespace bdfs
 
 int main(int argc, char** argv) {
-  RunServer();
+  bdfs::RunServer();
 
   return 0;
 }
