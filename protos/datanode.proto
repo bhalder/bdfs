@@ -1,0 +1,73 @@
+syntax = "proto3";
+package bdfs;
+
+message Empty {
+
+}
+
+message node_meta {
+    string _name = 1;
+    string _ip = 2;
+}
+
+message msg_meta {
+    int64 id = 1;
+    int32 type = 2;
+    node_meta from = 3;
+}
+
+message datanode {
+    node_meta _meta = 1;
+    int64 sizeGB = 3;
+}
+
+message datablock_meta {
+    string name = 1;
+    int64 hash = 2;
+    int32 replication_count = 3;
+    repeated datanode replica_nodes = 4;
+}
+
+message block_summary {
+    node_meta data_meta = 1;
+    repeated datablock_meta blocks = 2; 
+}
+
+message fsserver_meta {
+    node_meta _meta = 1;
+    int32 keepalive_timeout = 2;
+}
+
+message connect_req {
+    datanode _datanode = 1;
+}
+
+message connect_resp {
+	fsserver_meta server_meta = 1;
+}
+
+message keepalive_req {
+    node_meta node = 1;
+    int32 keepalive_id = 2;
+}
+
+message keepalive_resp {
+    string nodename = 1;
+}
+
+message disconnect_req {
+    string ipaddress = 1;
+    string nodename = 2;
+}
+
+message disconnect_resp {
+    string ipaddress = 1;
+    string nodename = 2;
+}
+
+service datanode_protocol {
+    rpc SendConnect(connect_req) returns (connect_resp) {}
+    rpc SendKeepalive(keepalive_req) returns (keepalive_resp) {}
+    rpc SendBlockSummary(block_summary) returns (Empty) {} 
+    rpc SendDisconnect(disconnect_req) returns (disconnect_resp) {}
+}
