@@ -3,7 +3,7 @@ Barun Distributed File System
 
 The BDFS is influenced by GFS and HDFS. The main goal of this implementation is to document the evolution of a distributed filesystem from scratch and enable new programmers to run and play with a toy DFS which is production ready.
 
-#The BDFS has three main components - 
+# The BDFS has three main components - 
 FS-Server
 Data Nodes
 Client Library
@@ -18,16 +18,16 @@ bdfs_write()
 
 For the first version, a flat filesystem will be implemented, whereby all the files are under root “/”.  For the subsequent versions, a hierarchial version will be supported. The view of the hierarchial filesystem will be provided by the FS-Server
 
-#RPCs 
+# RPCs 
 The FS-Server never initiates a connection. It is passive and responds to any messages that the DataNode or the Client may send. 
 
-##DataNode to FS-Server
+## DataNode to FS-Server
 node_connect()
 node_disconnect()
 node_heartbeat()
 node_get_replicas()
 
-##Client to FS-Server
+## Client to FS-Server
 init_connection() : Connects to a known port number
 open_file() 
 close_file()
