@@ -10,7 +10,7 @@ The code in this project is written with readability and understandability in mi
 - Data Nodes
 - Client Library
 
-The FS-Server is the metadata layer of BDFS. It is the one which provides the abstraction of a filesystem to the user. The user accesses the “File System” using a client library (in C++) which they have linked into their applications. It must be ensured, that the client library is appropriately initialized to be able to access to correct instance of the BDFS. The actual data pertaining to the files are stored in blocks across data nodes. The blocks are replicated across various data-nodes by the FS-Server. 
+The FS-Server is the metadata layer of BDFS. We want to ensure that the metadata is small enough to fit within memory. We will be mostly C++ datastructures - vector/map/set. It is the one which provides the abstraction of a filesystem to the user. The user accesses the “File System” using a client library (in C++) which they have linked into their applications. It must be ensured, that the client library is appropriately initialized to be able to access to correct instance of the BDFS. The actual data pertaining to the files are stored in blocks across data nodes. The blocks are replicated across various data-nodes by the FS-Server. 
 
 It must be noted that BDFS is does not provide all the features of a POSIX compliant file system. BDFS does provide few useful APIs to the client. 
 
