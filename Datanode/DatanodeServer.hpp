@@ -11,7 +11,6 @@ namespace bdfs {
 
 class DatanodeServerImpl final : public bdfs::datanode_server::Service{
    
-};
 
 void RunServer() {
   std::string server_address("0.0.0.0:50051");
@@ -31,10 +30,10 @@ void RunServer() {
   // responsible for shutting down the server for this call to ever return.
   server->Wait();
 }
-} // namespace bdfs
 
-int main(int argc, char** argv) {
-  bdfs::RunServer();
-
-  return 0;
+void run() {
+  RunServer();
 }
+
+};
+} // namespace bdfs

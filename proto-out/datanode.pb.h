@@ -37,7 +37,7 @@ namespace protobuf_datanode_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[12];
+  static const ::google::protobuf::internal::ParseTable schema[13];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -67,6 +67,8 @@ void InitDefaultsdisconnect_reqImpl();
 void InitDefaultsdisconnect_req();
 void InitDefaultsdisconnect_respImpl();
 void InitDefaultsdisconnect_resp();
+void InitDefaultsblock_received_reqImpl();
+void InitDefaultsblock_received_req();
 inline void InitDefaults() {
   InitDefaultsnode_meta();
   InitDefaultsmsg_meta();
@@ -80,9 +82,13 @@ inline void InitDefaults() {
   InitDefaultskeepalive_resp();
   InitDefaultsdisconnect_req();
   InitDefaultsdisconnect_resp();
+  InitDefaultsblock_received_req();
 }
 }  // namespace protobuf_datanode_2eproto
 namespace bdfs {
+class block_received_req;
+class block_received_reqDefaultTypeInternal;
+extern block_received_reqDefaultTypeInternal _block_received_req_default_instance_;
 class block_summary;
 class block_summaryDefaultTypeInternal;
 extern block_summaryDefaultTypeInternal _block_summary_default_instance_;
@@ -1581,6 +1587,118 @@ class disconnect_resp : public ::google::protobuf::Message /* @@protoc_insertion
   friend struct ::protobuf_datanode_2eproto::TableStruct;
   friend void ::protobuf_datanode_2eproto::InitDefaultsdisconnect_respImpl();
 };
+// -------------------------------------------------------------------
+
+class block_received_req : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:bdfs.block_received_req) */ {
+ public:
+  block_received_req();
+  virtual ~block_received_req();
+
+  block_received_req(const block_received_req& from);
+
+  inline block_received_req& operator=(const block_received_req& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  block_received_req(block_received_req&& from) noexcept
+    : block_received_req() {
+    *this = ::std::move(from);
+  }
+
+  inline block_received_req& operator=(block_received_req&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const block_received_req& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const block_received_req* internal_default_instance() {
+    return reinterpret_cast<const block_received_req*>(
+               &_block_received_req_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    12;
+
+  void Swap(block_received_req* other);
+  friend void swap(block_received_req& a, block_received_req& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline block_received_req* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  block_received_req* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const block_received_req& from);
+  void MergeFrom(const block_received_req& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(block_received_req* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .bdfs.message_meta meta = 1;
+  bool has_meta() const;
+  void clear_meta();
+  static const int kMetaFieldNumber = 1;
+  const ::bdfs::message_meta& meta() const;
+  ::bdfs::message_meta* release_meta();
+  ::bdfs::message_meta* mutable_meta();
+  void set_allocated_meta(::bdfs::message_meta* meta);
+
+  // .bdfs.datablock_meta recieved_block = 2;
+  bool has_recieved_block() const;
+  void clear_recieved_block();
+  static const int kRecievedBlockFieldNumber = 2;
+  const ::bdfs::datablock_meta& recieved_block() const;
+  ::bdfs::datablock_meta* release_recieved_block();
+  ::bdfs::datablock_meta* mutable_recieved_block();
+  void set_allocated_recieved_block(::bdfs::datablock_meta* recieved_block);
+
+  // @@protoc_insertion_point(class_scope:bdfs.block_received_req)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::bdfs::message_meta* meta_;
+  ::bdfs::datablock_meta* recieved_block_;
+  mutable int _cached_size_;
+  friend struct ::protobuf_datanode_2eproto::TableStruct;
+  friend void ::protobuf_datanode_2eproto::InitDefaultsblock_received_reqImpl();
+};
 // ===================================================================
 
 
@@ -2964,9 +3082,109 @@ inline void disconnect_resp::set_allocated_nodename(::std::string* nodename) {
   // @@protoc_insertion_point(field_set_allocated:bdfs.disconnect_resp.nodename)
 }
 
+// -------------------------------------------------------------------
+
+// block_received_req
+
+// .bdfs.message_meta meta = 1;
+inline bool block_received_req::has_meta() const {
+  return this != internal_default_instance() && meta_ != NULL;
+}
+inline const ::bdfs::message_meta& block_received_req::meta() const {
+  const ::bdfs::message_meta* p = meta_;
+  // @@protoc_insertion_point(field_get:bdfs.block_received_req.meta)
+  return p != NULL ? *p : *reinterpret_cast<const ::bdfs::message_meta*>(
+      &::bdfs::_message_meta_default_instance_);
+}
+inline ::bdfs::message_meta* block_received_req::release_meta() {
+  // @@protoc_insertion_point(field_release:bdfs.block_received_req.meta)
+  
+  ::bdfs::message_meta* temp = meta_;
+  meta_ = NULL;
+  return temp;
+}
+inline ::bdfs::message_meta* block_received_req::mutable_meta() {
+  
+  if (meta_ == NULL) {
+    meta_ = new ::bdfs::message_meta;
+  }
+  // @@protoc_insertion_point(field_mutable:bdfs.block_received_req.meta)
+  return meta_;
+}
+inline void block_received_req::set_allocated_meta(::bdfs::message_meta* meta) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(meta_);
+  }
+  if (meta) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      meta = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, meta, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  meta_ = meta;
+  // @@protoc_insertion_point(field_set_allocated:bdfs.block_received_req.meta)
+}
+
+// .bdfs.datablock_meta recieved_block = 2;
+inline bool block_received_req::has_recieved_block() const {
+  return this != internal_default_instance() && recieved_block_ != NULL;
+}
+inline void block_received_req::clear_recieved_block() {
+  if (GetArenaNoVirtual() == NULL && recieved_block_ != NULL) {
+    delete recieved_block_;
+  }
+  recieved_block_ = NULL;
+}
+inline const ::bdfs::datablock_meta& block_received_req::recieved_block() const {
+  const ::bdfs::datablock_meta* p = recieved_block_;
+  // @@protoc_insertion_point(field_get:bdfs.block_received_req.recieved_block)
+  return p != NULL ? *p : *reinterpret_cast<const ::bdfs::datablock_meta*>(
+      &::bdfs::_datablock_meta_default_instance_);
+}
+inline ::bdfs::datablock_meta* block_received_req::release_recieved_block() {
+  // @@protoc_insertion_point(field_release:bdfs.block_received_req.recieved_block)
+  
+  ::bdfs::datablock_meta* temp = recieved_block_;
+  recieved_block_ = NULL;
+  return temp;
+}
+inline ::bdfs::datablock_meta* block_received_req::mutable_recieved_block() {
+  
+  if (recieved_block_ == NULL) {
+    recieved_block_ = new ::bdfs::datablock_meta;
+  }
+  // @@protoc_insertion_point(field_mutable:bdfs.block_received_req.recieved_block)
+  return recieved_block_;
+}
+inline void block_received_req::set_allocated_recieved_block(::bdfs::datablock_meta* recieved_block) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete recieved_block_;
+  }
+  if (recieved_block) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      recieved_block = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, recieved_block, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  recieved_block_ = recieved_block;
+  // @@protoc_insertion_point(field_set_allocated:bdfs.block_received_req.recieved_block)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -20,6 +20,7 @@ static const char* datanode_protocol_method_names[] = {
   "/bdfs.datanode_protocol/SendKeepalive",
   "/bdfs.datanode_protocol/SendBlockSummary",
   "/bdfs.datanode_protocol/SendDisconnect",
+  "/bdfs.datanode_protocol/SendBlockReceived",
 };
 
 std::unique_ptr< datanode_protocol::Stub> datanode_protocol::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -33,6 +34,7 @@ datanode_protocol::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   , rpcmethod_SendKeepalive_(datanode_protocol_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SendBlockSummary_(datanode_protocol_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_SendDisconnect_(datanode_protocol_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_SendBlockReceived_(datanode_protocol_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status datanode_protocol::Stub::SendConnect(::grpc::ClientContext* context, const ::bdfs::connect_req& request, ::bdfs::connect_resp* response) {
@@ -83,6 +85,18 @@ datanode_protocol::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& 
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::bdfs::disconnect_resp>::Create(channel_.get(), cq, rpcmethod_SendDisconnect_, context, request, false);
 }
 
+::grpc::Status datanode_protocol::Stub::SendBlockReceived(::grpc::ClientContext* context, const ::bdfs::block_received_req& request, ::bdfs::Empty* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_SendBlockReceived_, context, request, response);
+}
+
+::grpc::ClientAsyncResponseReader< ::bdfs::Empty>* datanode_protocol::Stub::AsyncSendBlockReceivedRaw(::grpc::ClientContext* context, const ::bdfs::block_received_req& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::bdfs::Empty>::Create(channel_.get(), cq, rpcmethod_SendBlockReceived_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::bdfs::Empty>* datanode_protocol::Stub::PrepareAsyncSendBlockReceivedRaw(::grpc::ClientContext* context, const ::bdfs::block_received_req& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::bdfs::Empty>::Create(channel_.get(), cq, rpcmethod_SendBlockReceived_, context, request, false);
+}
+
 datanode_protocol::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       datanode_protocol_method_names[0],
@@ -104,6 +118,11 @@ datanode_protocol::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< datanode_protocol::Service, ::bdfs::disconnect_req, ::bdfs::disconnect_resp>(
           std::mem_fn(&datanode_protocol::Service::SendDisconnect), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      datanode_protocol_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< datanode_protocol::Service, ::bdfs::block_received_req, ::bdfs::Empty>(
+          std::mem_fn(&datanode_protocol::Service::SendBlockReceived), this)));
 }
 
 datanode_protocol::Service::~Service() {
@@ -131,6 +150,13 @@ datanode_protocol::Service::~Service() {
 }
 
 ::grpc::Status datanode_protocol::Service::SendDisconnect(::grpc::ServerContext* context, const ::bdfs::disconnect_req* request, ::bdfs::disconnect_resp* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status datanode_protocol::Service::SendBlockReceived(::grpc::ServerContext* context, const ::bdfs::block_received_req* request, ::bdfs::Empty* response) {
   (void) context;
   (void) request;
   (void) response;

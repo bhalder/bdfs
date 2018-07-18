@@ -62,6 +62,13 @@ class datanode_protocol final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::bdfs::disconnect_resp>> PrepareAsyncSendDisconnect(::grpc::ClientContext* context, const ::bdfs::disconnect_req& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::bdfs::disconnect_resp>>(PrepareAsyncSendDisconnectRaw(context, request, cq));
     }
+    virtual ::grpc::Status SendBlockReceived(::grpc::ClientContext* context, const ::bdfs::block_received_req& request, ::bdfs::Empty* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::bdfs::Empty>> AsyncSendBlockReceived(::grpc::ClientContext* context, const ::bdfs::block_received_req& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::bdfs::Empty>>(AsyncSendBlockReceivedRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::bdfs::Empty>> PrepareAsyncSendBlockReceived(::grpc::ClientContext* context, const ::bdfs::block_received_req& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::bdfs::Empty>>(PrepareAsyncSendBlockReceivedRaw(context, request, cq));
+    }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::bdfs::connect_resp>* AsyncSendConnectRaw(::grpc::ClientContext* context, const ::bdfs::connect_req& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::bdfs::connect_resp>* PrepareAsyncSendConnectRaw(::grpc::ClientContext* context, const ::bdfs::connect_req& request, ::grpc::CompletionQueue* cq) = 0;
@@ -71,6 +78,8 @@ class datanode_protocol final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::bdfs::Empty>* PrepareAsyncSendBlockSummaryRaw(::grpc::ClientContext* context, const ::bdfs::block_summary& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::bdfs::disconnect_resp>* AsyncSendDisconnectRaw(::grpc::ClientContext* context, const ::bdfs::disconnect_req& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::bdfs::disconnect_resp>* PrepareAsyncSendDisconnectRaw(::grpc::ClientContext* context, const ::bdfs::disconnect_req& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::bdfs::Empty>* AsyncSendBlockReceivedRaw(::grpc::ClientContext* context, const ::bdfs::block_received_req& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::bdfs::Empty>* PrepareAsyncSendBlockReceivedRaw(::grpc::ClientContext* context, const ::bdfs::block_received_req& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -103,6 +112,13 @@ class datanode_protocol final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::bdfs::disconnect_resp>> PrepareAsyncSendDisconnect(::grpc::ClientContext* context, const ::bdfs::disconnect_req& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::bdfs::disconnect_resp>>(PrepareAsyncSendDisconnectRaw(context, request, cq));
     }
+    ::grpc::Status SendBlockReceived(::grpc::ClientContext* context, const ::bdfs::block_received_req& request, ::bdfs::Empty* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::bdfs::Empty>> AsyncSendBlockReceived(::grpc::ClientContext* context, const ::bdfs::block_received_req& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::bdfs::Empty>>(AsyncSendBlockReceivedRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::bdfs::Empty>> PrepareAsyncSendBlockReceived(::grpc::ClientContext* context, const ::bdfs::block_received_req& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::bdfs::Empty>>(PrepareAsyncSendBlockReceivedRaw(context, request, cq));
+    }
 
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
@@ -114,10 +130,13 @@ class datanode_protocol final {
     ::grpc::ClientAsyncResponseReader< ::bdfs::Empty>* PrepareAsyncSendBlockSummaryRaw(::grpc::ClientContext* context, const ::bdfs::block_summary& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::bdfs::disconnect_resp>* AsyncSendDisconnectRaw(::grpc::ClientContext* context, const ::bdfs::disconnect_req& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::bdfs::disconnect_resp>* PrepareAsyncSendDisconnectRaw(::grpc::ClientContext* context, const ::bdfs::disconnect_req& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::bdfs::Empty>* AsyncSendBlockReceivedRaw(::grpc::ClientContext* context, const ::bdfs::block_received_req& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::bdfs::Empty>* PrepareAsyncSendBlockReceivedRaw(::grpc::ClientContext* context, const ::bdfs::block_received_req& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_SendConnect_;
     const ::grpc::internal::RpcMethod rpcmethod_SendKeepalive_;
     const ::grpc::internal::RpcMethod rpcmethod_SendBlockSummary_;
     const ::grpc::internal::RpcMethod rpcmethod_SendDisconnect_;
+    const ::grpc::internal::RpcMethod rpcmethod_SendBlockReceived_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -129,6 +148,7 @@ class datanode_protocol final {
     virtual ::grpc::Status SendKeepalive(::grpc::ServerContext* context, const ::bdfs::keepalive_req* request, ::bdfs::keepalive_resp* response);
     virtual ::grpc::Status SendBlockSummary(::grpc::ServerContext* context, const ::bdfs::block_summary* request, ::bdfs::Empty* response);
     virtual ::grpc::Status SendDisconnect(::grpc::ServerContext* context, const ::bdfs::disconnect_req* request, ::bdfs::disconnect_resp* response);
+    virtual ::grpc::Status SendBlockReceived(::grpc::ServerContext* context, const ::bdfs::block_received_req* request, ::bdfs::Empty* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_SendConnect : public BaseClass {
@@ -210,7 +230,27 @@ class datanode_protocol final {
       ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_SendConnect<WithAsyncMethod_SendKeepalive<WithAsyncMethod_SendBlockSummary<WithAsyncMethod_SendDisconnect<Service > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_SendBlockReceived : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_SendBlockReceived() {
+      ::grpc::Service::MarkMethodAsync(4);
+    }
+    ~WithAsyncMethod_SendBlockReceived() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendBlockReceived(::grpc::ServerContext* context, const ::bdfs::block_received_req* request, ::bdfs::Empty* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSendBlockReceived(::grpc::ServerContext* context, ::bdfs::block_received_req* request, ::grpc::ServerAsyncResponseWriter< ::bdfs::Empty>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_SendConnect<WithAsyncMethod_SendKeepalive<WithAsyncMethod_SendBlockSummary<WithAsyncMethod_SendDisconnect<WithAsyncMethod_SendBlockReceived<Service > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_SendConnect : public BaseClass {
    private:
@@ -275,6 +315,23 @@ class datanode_protocol final {
     }
     // disable synchronous version of this method
     ::grpc::Status SendDisconnect(::grpc::ServerContext* context, const ::bdfs::disconnect_req* request, ::bdfs::disconnect_resp* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_SendBlockReceived : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_SendBlockReceived() {
+      ::grpc::Service::MarkMethodGeneric(4);
+    }
+    ~WithGenericMethod_SendBlockReceived() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendBlockReceived(::grpc::ServerContext* context, const ::bdfs::block_received_req* request, ::bdfs::Empty* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -360,6 +417,26 @@ class datanode_protocol final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_SendBlockReceived : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_SendBlockReceived() {
+      ::grpc::Service::MarkMethodRaw(4);
+    }
+    ~WithRawMethod_SendBlockReceived() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status SendBlockReceived(::grpc::ServerContext* context, const ::bdfs::block_received_req* request, ::bdfs::Empty* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestSendBlockReceived(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_SendConnect : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -439,9 +516,29 @@ class datanode_protocol final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedSendDisconnect(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::bdfs::disconnect_req,::bdfs::disconnect_resp>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_SendConnect<WithStreamedUnaryMethod_SendKeepalive<WithStreamedUnaryMethod_SendBlockSummary<WithStreamedUnaryMethod_SendDisconnect<Service > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_SendBlockReceived : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_SendBlockReceived() {
+      ::grpc::Service::MarkMethodStreamed(4,
+        new ::grpc::internal::StreamedUnaryHandler< ::bdfs::block_received_req, ::bdfs::Empty>(std::bind(&WithStreamedUnaryMethod_SendBlockReceived<BaseClass>::StreamedSendBlockReceived, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_SendBlockReceived() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status SendBlockReceived(::grpc::ServerContext* context, const ::bdfs::block_received_req* request, ::bdfs::Empty* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedSendBlockReceived(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::bdfs::block_received_req,::bdfs::Empty>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_SendConnect<WithStreamedUnaryMethod_SendKeepalive<WithStreamedUnaryMethod_SendBlockSummary<WithStreamedUnaryMethod_SendDisconnect<WithStreamedUnaryMethod_SendBlockReceived<Service > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_SendConnect<WithStreamedUnaryMethod_SendKeepalive<WithStreamedUnaryMethod_SendBlockSummary<WithStreamedUnaryMethod_SendDisconnect<Service > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_SendConnect<WithStreamedUnaryMethod_SendKeepalive<WithStreamedUnaryMethod_SendBlockSummary<WithStreamedUnaryMethod_SendDisconnect<WithStreamedUnaryMethod_SendBlockReceived<Service > > > > > StreamedService;
 };
 
 }  // namespace bdfs

@@ -72,9 +72,16 @@ message disconnect_resp {
     string nodename = 4;
 }
 
+/* This is the message the datanode sends to the FS-Server on successful receipt of a block */
+message block_received_req {
+    message_meta meta = 1;
+    datablock_meta recieved_block = 2;    
+}
+
 service datanode_protocol {
     rpc SendConnect(connect_req) returns (connect_resp) {}
     rpc SendKeepalive(keepalive_req) returns (keepalive_resp) {}
     rpc SendBlockSummary(block_summary) returns (Empty) {} 
     rpc SendDisconnect(disconnect_req) returns (disconnect_resp) {}
+    rpc SendBlockReceived(block_received_req) returns (Empty) {}
 }
