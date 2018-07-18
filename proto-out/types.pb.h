@@ -45,51 +45,51 @@ struct TableStruct {
 void AddDescriptors();
 void InitDefaultsEmptyImpl();
 void InitDefaultsEmpty();
-void InitDefaultsMessageMetaImpl();
-void InitDefaultsMessageMeta();
-void InitDefaultsResponseImpl();
-void InitDefaultsResponse();
+void InitDefaultsmessage_metaImpl();
+void InitDefaultsmessage_meta();
+void InitDefaultsresponseImpl();
+void InitDefaultsresponse();
 inline void InitDefaults() {
   InitDefaultsEmpty();
-  InitDefaultsMessageMeta();
-  InitDefaultsResponse();
+  InitDefaultsmessage_meta();
+  InitDefaultsresponse();
 }
 }  // namespace protobuf_types_2eproto
 namespace bdfs {
 class Empty;
 class EmptyDefaultTypeInternal;
 extern EmptyDefaultTypeInternal _Empty_default_instance_;
-class MessageMeta;
-class MessageMetaDefaultTypeInternal;
-extern MessageMetaDefaultTypeInternal _MessageMeta_default_instance_;
-class Response;
-class ResponseDefaultTypeInternal;
-extern ResponseDefaultTypeInternal _Response_default_instance_;
+class message_meta;
+class message_metaDefaultTypeInternal;
+extern message_metaDefaultTypeInternal _message_meta_default_instance_;
+class response;
+class responseDefaultTypeInternal;
+extern responseDefaultTypeInternal _response_default_instance_;
 }  // namespace bdfs
 namespace bdfs {
 
-enum Response_Resp {
-  Response_Resp_NA = 0,
-  Response_Resp_SUCCESS = 1,
-  Response_Resp_FAIL = 2,
-  Response_Resp_CATASTROPHIC = 3,
-  Response_Resp_Response_Resp_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
-  Response_Resp_Response_Resp_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+enum response_Resp {
+  response_Resp_NA = 0,
+  response_Resp_SUCCESS = 1,
+  response_Resp_FAIL = 2,
+  response_Resp_CATASTROPHIC = 3,
+  response_Resp_response_Resp_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  response_Resp_response_Resp_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
 };
-bool Response_Resp_IsValid(int value);
-const Response_Resp Response_Resp_Resp_MIN = Response_Resp_NA;
-const Response_Resp Response_Resp_Resp_MAX = Response_Resp_CATASTROPHIC;
-const int Response_Resp_Resp_ARRAYSIZE = Response_Resp_Resp_MAX + 1;
+bool response_Resp_IsValid(int value);
+const response_Resp response_Resp_Resp_MIN = response_Resp_NA;
+const response_Resp response_Resp_Resp_MAX = response_Resp_CATASTROPHIC;
+const int response_Resp_Resp_ARRAYSIZE = response_Resp_Resp_MAX + 1;
 
-const ::google::protobuf::EnumDescriptor* Response_Resp_descriptor();
-inline const ::std::string& Response_Resp_Name(Response_Resp value) {
+const ::google::protobuf::EnumDescriptor* response_Resp_descriptor();
+inline const ::std::string& response_Resp_Name(response_Resp value) {
   return ::google::protobuf::internal::NameOfEnum(
-    Response_Resp_descriptor(), value);
+    response_Resp_descriptor(), value);
 }
-inline bool Response_Resp_Parse(
-    const ::std::string& name, Response_Resp* value) {
-  return ::google::protobuf::internal::ParseNamedEnum<Response_Resp>(
-    Response_Resp_descriptor(), name, value);
+inline bool response_Resp_Parse(
+    const ::std::string& name, response_Resp* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<response_Resp>(
+    response_Resp_descriptor(), name, value);
 }
 // ===================================================================
 
@@ -185,24 +185,24 @@ class Empty : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
 };
 // -------------------------------------------------------------------
 
-class MessageMeta : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:bdfs.MessageMeta) */ {
+class message_meta : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:bdfs.message_meta) */ {
  public:
-  MessageMeta();
-  virtual ~MessageMeta();
+  message_meta();
+  virtual ~message_meta();
 
-  MessageMeta(const MessageMeta& from);
+  message_meta(const message_meta& from);
 
-  inline MessageMeta& operator=(const MessageMeta& from) {
+  inline message_meta& operator=(const message_meta& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  MessageMeta(MessageMeta&& from) noexcept
-    : MessageMeta() {
+  message_meta(message_meta&& from) noexcept
+    : message_meta() {
     *this = ::std::move(from);
   }
 
-  inline MessageMeta& operator=(MessageMeta&& from) noexcept {
+  inline message_meta& operator=(message_meta&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -212,30 +212,30 @@ class MessageMeta : public ::google::protobuf::Message /* @@protoc_insertion_poi
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const MessageMeta& default_instance();
+  static const message_meta& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const MessageMeta* internal_default_instance() {
-    return reinterpret_cast<const MessageMeta*>(
-               &_MessageMeta_default_instance_);
+  static inline const message_meta* internal_default_instance() {
+    return reinterpret_cast<const message_meta*>(
+               &_message_meta_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
     1;
 
-  void Swap(MessageMeta* other);
-  friend void swap(MessageMeta& a, MessageMeta& b) {
+  void Swap(message_meta* other);
+  friend void swap(message_meta& a, message_meta& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline MessageMeta* New() const PROTOBUF_FINAL { return New(NULL); }
+  inline message_meta* New() const PROTOBUF_FINAL { return New(NULL); }
 
-  MessageMeta* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  message_meta* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
   void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
   void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
-  void CopyFrom(const MessageMeta& from);
-  void MergeFrom(const MessageMeta& from);
+  void CopyFrom(const message_meta& from);
+  void MergeFrom(const message_meta& from);
   void Clear() PROTOBUF_FINAL;
   bool IsInitialized() const PROTOBUF_FINAL;
 
@@ -251,7 +251,7 @@ class MessageMeta : public ::google::protobuf::Message /* @@protoc_insertion_poi
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const PROTOBUF_FINAL;
-  void InternalSwap(MessageMeta* other);
+  void InternalSwap(message_meta* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -273,35 +273,35 @@ class MessageMeta : public ::google::protobuf::Message /* @@protoc_insertion_poi
   ::google::protobuf::uint64 id() const;
   void set_id(::google::protobuf::uint64 value);
 
-  // @@protoc_insertion_point(class_scope:bdfs.MessageMeta)
+  // @@protoc_insertion_point(class_scope:bdfs.message_meta)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::uint64 id_;
   mutable int _cached_size_;
   friend struct ::protobuf_types_2eproto::TableStruct;
-  friend void ::protobuf_types_2eproto::InitDefaultsMessageMetaImpl();
+  friend void ::protobuf_types_2eproto::InitDefaultsmessage_metaImpl();
 };
 // -------------------------------------------------------------------
 
-class Response : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:bdfs.Response) */ {
+class response : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:bdfs.response) */ {
  public:
-  Response();
-  virtual ~Response();
+  response();
+  virtual ~response();
 
-  Response(const Response& from);
+  response(const response& from);
 
-  inline Response& operator=(const Response& from) {
+  inline response& operator=(const response& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  Response(Response&& from) noexcept
-    : Response() {
+  response(response&& from) noexcept
+    : response() {
     *this = ::std::move(from);
   }
 
-  inline Response& operator=(Response&& from) noexcept {
+  inline response& operator=(response&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -311,30 +311,30 @@ class Response : public ::google::protobuf::Message /* @@protoc_insertion_point(
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const Response& default_instance();
+  static const response& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Response* internal_default_instance() {
-    return reinterpret_cast<const Response*>(
-               &_Response_default_instance_);
+  static inline const response* internal_default_instance() {
+    return reinterpret_cast<const response*>(
+               &_response_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
     2;
 
-  void Swap(Response* other);
-  friend void swap(Response& a, Response& b) {
+  void Swap(response* other);
+  friend void swap(response& a, response& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline Response* New() const PROTOBUF_FINAL { return New(NULL); }
+  inline response* New() const PROTOBUF_FINAL { return New(NULL); }
 
-  Response* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  response* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
   void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
   void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
-  void CopyFrom(const Response& from);
-  void MergeFrom(const Response& from);
+  void CopyFrom(const response& from);
+  void MergeFrom(const response& from);
   void Clear() PROTOBUF_FINAL;
   bool IsInitialized() const PROTOBUF_FINAL;
 
@@ -350,7 +350,7 @@ class Response : public ::google::protobuf::Message /* @@protoc_insertion_point(
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const PROTOBUF_FINAL;
-  void InternalSwap(Response* other);
+  void InternalSwap(response* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -364,34 +364,34 @@ class Response : public ::google::protobuf::Message /* @@protoc_insertion_point(
 
   // nested types ----------------------------------------------------
 
-  typedef Response_Resp Resp;
+  typedef response_Resp Resp;
   static const Resp NA =
-    Response_Resp_NA;
+    response_Resp_NA;
   static const Resp SUCCESS =
-    Response_Resp_SUCCESS;
+    response_Resp_SUCCESS;
   static const Resp FAIL =
-    Response_Resp_FAIL;
+    response_Resp_FAIL;
   static const Resp CATASTROPHIC =
-    Response_Resp_CATASTROPHIC;
+    response_Resp_CATASTROPHIC;
   static inline bool Resp_IsValid(int value) {
-    return Response_Resp_IsValid(value);
+    return response_Resp_IsValid(value);
   }
   static const Resp Resp_MIN =
-    Response_Resp_Resp_MIN;
+    response_Resp_Resp_MIN;
   static const Resp Resp_MAX =
-    Response_Resp_Resp_MAX;
+    response_Resp_Resp_MAX;
   static const int Resp_ARRAYSIZE =
-    Response_Resp_Resp_ARRAYSIZE;
+    response_Resp_Resp_ARRAYSIZE;
   static inline const ::google::protobuf::EnumDescriptor*
   Resp_descriptor() {
-    return Response_Resp_descriptor();
+    return response_Resp_descriptor();
   }
   static inline const ::std::string& Resp_Name(Resp value) {
-    return Response_Resp_Name(value);
+    return response_Resp_Name(value);
   }
   static inline bool Resp_Parse(const ::std::string& name,
       Resp* value) {
-    return Response_Resp_Parse(name, value);
+    return response_Resp_Parse(name, value);
   }
 
   // accessors -------------------------------------------------------
@@ -410,13 +410,13 @@ class Response : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::std::string* release_message();
   void set_allocated_message(::std::string* message);
 
-  // .bdfs.Response.Resp response_code = 1;
+  // .bdfs.response.Resp response_code = 1;
   void clear_response_code();
   static const int kResponseCodeFieldNumber = 1;
-  ::bdfs::Response_Resp response_code() const;
-  void set_response_code(::bdfs::Response_Resp value);
+  ::bdfs::response_Resp response_code() const;
+  void set_response_code(::bdfs::response_Resp value);
 
-  // @@protoc_insertion_point(class_scope:bdfs.Response)
+  // @@protoc_insertion_point(class_scope:bdfs.response)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
@@ -424,7 +424,7 @@ class Response : public ::google::protobuf::Message /* @@protoc_insertion_point(
   int response_code_;
   mutable int _cached_size_;
   friend struct ::protobuf_types_2eproto::TableStruct;
-  friend void ::protobuf_types_2eproto::InitDefaultsResponseImpl();
+  friend void ::protobuf_types_2eproto::InitDefaultsresponseImpl();
 };
 // ===================================================================
 
@@ -439,91 +439,91 @@ class Response : public ::google::protobuf::Message /* @@protoc_insertion_point(
 
 // -------------------------------------------------------------------
 
-// MessageMeta
+// message_meta
 
 // uint64 id = 1;
-inline void MessageMeta::clear_id() {
+inline void message_meta::clear_id() {
   id_ = GOOGLE_ULONGLONG(0);
 }
-inline ::google::protobuf::uint64 MessageMeta::id() const {
-  // @@protoc_insertion_point(field_get:bdfs.MessageMeta.id)
+inline ::google::protobuf::uint64 message_meta::id() const {
+  // @@protoc_insertion_point(field_get:bdfs.message_meta.id)
   return id_;
 }
-inline void MessageMeta::set_id(::google::protobuf::uint64 value) {
+inline void message_meta::set_id(::google::protobuf::uint64 value) {
   
   id_ = value;
-  // @@protoc_insertion_point(field_set:bdfs.MessageMeta.id)
+  // @@protoc_insertion_point(field_set:bdfs.message_meta.id)
 }
 
 // -------------------------------------------------------------------
 
-// Response
+// response
 
-// .bdfs.Response.Resp response_code = 1;
-inline void Response::clear_response_code() {
+// .bdfs.response.Resp response_code = 1;
+inline void response::clear_response_code() {
   response_code_ = 0;
 }
-inline ::bdfs::Response_Resp Response::response_code() const {
-  // @@protoc_insertion_point(field_get:bdfs.Response.response_code)
-  return static_cast< ::bdfs::Response_Resp >(response_code_);
+inline ::bdfs::response_Resp response::response_code() const {
+  // @@protoc_insertion_point(field_get:bdfs.response.response_code)
+  return static_cast< ::bdfs::response_Resp >(response_code_);
 }
-inline void Response::set_response_code(::bdfs::Response_Resp value) {
+inline void response::set_response_code(::bdfs::response_Resp value) {
   
   response_code_ = value;
-  // @@protoc_insertion_point(field_set:bdfs.Response.response_code)
+  // @@protoc_insertion_point(field_set:bdfs.response.response_code)
 }
 
 // string message = 2;
-inline void Response::clear_message() {
+inline void response::clear_message() {
   message_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& Response::message() const {
-  // @@protoc_insertion_point(field_get:bdfs.Response.message)
+inline const ::std::string& response::message() const {
+  // @@protoc_insertion_point(field_get:bdfs.response.message)
   return message_.GetNoArena();
 }
-inline void Response::set_message(const ::std::string& value) {
+inline void response::set_message(const ::std::string& value) {
   
   message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:bdfs.Response.message)
+  // @@protoc_insertion_point(field_set:bdfs.response.message)
 }
 #if LANG_CXX11
-inline void Response::set_message(::std::string&& value) {
+inline void response::set_message(::std::string&& value) {
   
   message_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:bdfs.Response.message)
+  // @@protoc_insertion_point(field_set_rvalue:bdfs.response.message)
 }
 #endif
-inline void Response::set_message(const char* value) {
+inline void response::set_message(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
   message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:bdfs.Response.message)
+  // @@protoc_insertion_point(field_set_char:bdfs.response.message)
 }
-inline void Response::set_message(const char* value, size_t size) {
+inline void response::set_message(const char* value, size_t size) {
   
   message_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:bdfs.Response.message)
+  // @@protoc_insertion_point(field_set_pointer:bdfs.response.message)
 }
-inline ::std::string* Response::mutable_message() {
+inline ::std::string* response::mutable_message() {
   
-  // @@protoc_insertion_point(field_mutable:bdfs.Response.message)
+  // @@protoc_insertion_point(field_mutable:bdfs.response.message)
   return message_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Response::release_message() {
-  // @@protoc_insertion_point(field_release:bdfs.Response.message)
+inline ::std::string* response::release_message() {
+  // @@protoc_insertion_point(field_release:bdfs.response.message)
   
   return message_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Response::set_allocated_message(::std::string* message) {
+inline void response::set_allocated_message(::std::string* message) {
   if (message != NULL) {
     
   } else {
     
   }
   message_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), message);
-  // @@protoc_insertion_point(field_set_allocated:bdfs.Response.message)
+  // @@protoc_insertion_point(field_set_allocated:bdfs.response.message)
 }
 
 #ifdef __GNUC__
@@ -541,10 +541,10 @@ inline void Response::set_allocated_message(::std::string* message) {
 namespace google {
 namespace protobuf {
 
-template <> struct is_proto_enum< ::bdfs::Response_Resp> : ::google::protobuf::internal::true_type {};
+template <> struct is_proto_enum< ::bdfs::response_Resp> : ::google::protobuf::internal::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::bdfs::Response_Resp>() {
-  return ::bdfs::Response_Resp_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::bdfs::response_Resp>() {
+  return ::bdfs::response_Resp_descriptor();
 }
 
 }  // namespace protobuf

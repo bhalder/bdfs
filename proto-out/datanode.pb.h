@@ -911,14 +911,14 @@ class connect_req : public ::google::protobuf::Message /* @@protoc_insertion_poi
 
   // accessors -------------------------------------------------------
 
-  // .bdfs.MessageMeta meta = 1;
+  // .bdfs.message_meta meta = 1;
   bool has_meta() const;
   void clear_meta();
   static const int kMetaFieldNumber = 1;
-  const ::bdfs::MessageMeta& meta() const;
-  ::bdfs::MessageMeta* release_meta();
-  ::bdfs::MessageMeta* mutable_meta();
-  void set_allocated_meta(::bdfs::MessageMeta* meta);
+  const ::bdfs::message_meta& meta() const;
+  ::bdfs::message_meta* release_meta();
+  ::bdfs::message_meta* mutable_meta();
+  void set_allocated_meta(::bdfs::message_meta* meta);
 
   // .bdfs.datanode _datanode = 2;
   bool has__datanode() const;
@@ -933,7 +933,7 @@ class connect_req : public ::google::protobuf::Message /* @@protoc_insertion_poi
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::bdfs::MessageMeta* meta_;
+  ::bdfs::message_meta* meta_;
   ::bdfs::datanode* _datanode_;
   mutable int _cached_size_;
   friend struct ::protobuf_datanode_2eproto::TableStruct;
@@ -1023,19 +1023,28 @@ class connect_resp : public ::google::protobuf::Message /* @@protoc_insertion_po
 
   // accessors -------------------------------------------------------
 
-  // .bdfs.MessageMeta meta = 1;
+  // .bdfs.message_meta meta = 1;
   bool has_meta() const;
   void clear_meta();
   static const int kMetaFieldNumber = 1;
-  const ::bdfs::MessageMeta& meta() const;
-  ::bdfs::MessageMeta* release_meta();
-  ::bdfs::MessageMeta* mutable_meta();
-  void set_allocated_meta(::bdfs::MessageMeta* meta);
+  const ::bdfs::message_meta& meta() const;
+  ::bdfs::message_meta* release_meta();
+  ::bdfs::message_meta* mutable_meta();
+  void set_allocated_meta(::bdfs::message_meta* meta);
 
-  // .bdfs.fsserver_meta server_meta = 2;
+  // .bdfs.response resp = 2;
+  bool has_resp() const;
+  void clear_resp();
+  static const int kRespFieldNumber = 2;
+  const ::bdfs::response& resp() const;
+  ::bdfs::response* release_resp();
+  ::bdfs::response* mutable_resp();
+  void set_allocated_resp(::bdfs::response* resp);
+
+  // .bdfs.fsserver_meta server_meta = 3;
   bool has_server_meta() const;
   void clear_server_meta();
-  static const int kServerMetaFieldNumber = 2;
+  static const int kServerMetaFieldNumber = 3;
   const ::bdfs::fsserver_meta& server_meta() const;
   ::bdfs::fsserver_meta* release_server_meta();
   ::bdfs::fsserver_meta* mutable_server_meta();
@@ -1045,7 +1054,8 @@ class connect_resp : public ::google::protobuf::Message /* @@protoc_insertion_po
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::bdfs::MessageMeta* meta_;
+  ::bdfs::message_meta* meta_;
+  ::bdfs::response* resp_;
   ::bdfs::fsserver_meta* server_meta_;
   mutable int _cached_size_;
   friend struct ::protobuf_datanode_2eproto::TableStruct;
@@ -1135,14 +1145,14 @@ class keepalive_req : public ::google::protobuf::Message /* @@protoc_insertion_p
 
   // accessors -------------------------------------------------------
 
-  // .bdfs.MessageMeta meta = 1;
+  // .bdfs.message_meta meta = 1;
   bool has_meta() const;
   void clear_meta();
   static const int kMetaFieldNumber = 1;
-  const ::bdfs::MessageMeta& meta() const;
-  ::bdfs::MessageMeta* release_meta();
-  ::bdfs::MessageMeta* mutable_meta();
-  void set_allocated_meta(::bdfs::MessageMeta* meta);
+  const ::bdfs::message_meta& meta() const;
+  ::bdfs::message_meta* release_meta();
+  ::bdfs::message_meta* mutable_meta();
+  void set_allocated_meta(::bdfs::message_meta* meta);
 
   // .bdfs.node_meta node = 2;
   bool has_node() const;
@@ -1163,7 +1173,7 @@ class keepalive_req : public ::google::protobuf::Message /* @@protoc_insertion_p
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::bdfs::MessageMeta* meta_;
+  ::bdfs::message_meta* meta_;
   ::bdfs::node_meta* node_;
   ::google::protobuf::int32 keepalive_id_;
   mutable int _cached_size_;
@@ -1254,9 +1264,9 @@ class keepalive_resp : public ::google::protobuf::Message /* @@protoc_insertion_
 
   // accessors -------------------------------------------------------
 
-  // string nodename = 2;
+  // string nodename = 3;
   void clear_nodename();
-  static const int kNodenameFieldNumber = 2;
+  static const int kNodenameFieldNumber = 3;
   const ::std::string& nodename() const;
   void set_nodename(const ::std::string& value);
   #if LANG_CXX11
@@ -1268,21 +1278,31 @@ class keepalive_resp : public ::google::protobuf::Message /* @@protoc_insertion_
   ::std::string* release_nodename();
   void set_allocated_nodename(::std::string* nodename);
 
-  // .bdfs.MessageMeta meta = 1;
+  // .bdfs.message_meta meta = 1;
   bool has_meta() const;
   void clear_meta();
   static const int kMetaFieldNumber = 1;
-  const ::bdfs::MessageMeta& meta() const;
-  ::bdfs::MessageMeta* release_meta();
-  ::bdfs::MessageMeta* mutable_meta();
-  void set_allocated_meta(::bdfs::MessageMeta* meta);
+  const ::bdfs::message_meta& meta() const;
+  ::bdfs::message_meta* release_meta();
+  ::bdfs::message_meta* mutable_meta();
+  void set_allocated_meta(::bdfs::message_meta* meta);
+
+  // .bdfs.response resp = 2;
+  bool has_resp() const;
+  void clear_resp();
+  static const int kRespFieldNumber = 2;
+  const ::bdfs::response& resp() const;
+  ::bdfs::response* release_resp();
+  ::bdfs::response* mutable_resp();
+  void set_allocated_resp(::bdfs::response* resp);
 
   // @@protoc_insertion_point(class_scope:bdfs.keepalive_resp)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr nodename_;
-  ::bdfs::MessageMeta* meta_;
+  ::bdfs::message_meta* meta_;
+  ::bdfs::response* resp_;
   mutable int _cached_size_;
   friend struct ::protobuf_datanode_2eproto::TableStruct;
   friend void ::protobuf_datanode_2eproto::InitDefaultskeepalive_respImpl();
@@ -1399,14 +1419,14 @@ class disconnect_req : public ::google::protobuf::Message /* @@protoc_insertion_
   ::std::string* release_nodename();
   void set_allocated_nodename(::std::string* nodename);
 
-  // .bdfs.MessageMeta meta = 1;
+  // .bdfs.message_meta meta = 1;
   bool has_meta() const;
   void clear_meta();
   static const int kMetaFieldNumber = 1;
-  const ::bdfs::MessageMeta& meta() const;
-  ::bdfs::MessageMeta* release_meta();
-  ::bdfs::MessageMeta* mutable_meta();
-  void set_allocated_meta(::bdfs::MessageMeta* meta);
+  const ::bdfs::message_meta& meta() const;
+  ::bdfs::message_meta* release_meta();
+  ::bdfs::message_meta* mutable_meta();
+  void set_allocated_meta(::bdfs::message_meta* meta);
 
   // @@protoc_insertion_point(class_scope:bdfs.disconnect_req)
  private:
@@ -1414,7 +1434,7 @@ class disconnect_req : public ::google::protobuf::Message /* @@protoc_insertion_
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr ipaddress_;
   ::google::protobuf::internal::ArenaStringPtr nodename_;
-  ::bdfs::MessageMeta* meta_;
+  ::bdfs::message_meta* meta_;
   mutable int _cached_size_;
   friend struct ::protobuf_datanode_2eproto::TableStruct;
   friend void ::protobuf_datanode_2eproto::InitDefaultsdisconnect_reqImpl();
@@ -1503,9 +1523,9 @@ class disconnect_resp : public ::google::protobuf::Message /* @@protoc_insertion
 
   // accessors -------------------------------------------------------
 
-  // string ipaddress = 2;
+  // string ipaddress = 3;
   void clear_ipaddress();
-  static const int kIpaddressFieldNumber = 2;
+  static const int kIpaddressFieldNumber = 3;
   const ::std::string& ipaddress() const;
   void set_ipaddress(const ::std::string& value);
   #if LANG_CXX11
@@ -1517,9 +1537,9 @@ class disconnect_resp : public ::google::protobuf::Message /* @@protoc_insertion
   ::std::string* release_ipaddress();
   void set_allocated_ipaddress(::std::string* ipaddress);
 
-  // string nodename = 3;
+  // string nodename = 4;
   void clear_nodename();
-  static const int kNodenameFieldNumber = 3;
+  static const int kNodenameFieldNumber = 4;
   const ::std::string& nodename() const;
   void set_nodename(const ::std::string& value);
   #if LANG_CXX11
@@ -1531,14 +1551,23 @@ class disconnect_resp : public ::google::protobuf::Message /* @@protoc_insertion
   ::std::string* release_nodename();
   void set_allocated_nodename(::std::string* nodename);
 
-  // .bdfs.MessageMeta meta = 1;
+  // .bdfs.message_meta meta = 1;
   bool has_meta() const;
   void clear_meta();
   static const int kMetaFieldNumber = 1;
-  const ::bdfs::MessageMeta& meta() const;
-  ::bdfs::MessageMeta* release_meta();
-  ::bdfs::MessageMeta* mutable_meta();
-  void set_allocated_meta(::bdfs::MessageMeta* meta);
+  const ::bdfs::message_meta& meta() const;
+  ::bdfs::message_meta* release_meta();
+  ::bdfs::message_meta* mutable_meta();
+  void set_allocated_meta(::bdfs::message_meta* meta);
+
+  // .bdfs.response resp = 2;
+  bool has_resp() const;
+  void clear_resp();
+  static const int kRespFieldNumber = 2;
+  const ::bdfs::response& resp() const;
+  ::bdfs::response* release_resp();
+  ::bdfs::response* mutable_resp();
+  void set_allocated_resp(::bdfs::response* resp);
 
   // @@protoc_insertion_point(class_scope:bdfs.disconnect_resp)
  private:
@@ -1546,7 +1575,8 @@ class disconnect_resp : public ::google::protobuf::Message /* @@protoc_insertion
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::ArenaStringPtr ipaddress_;
   ::google::protobuf::internal::ArenaStringPtr nodename_;
-  ::bdfs::MessageMeta* meta_;
+  ::bdfs::message_meta* meta_;
+  ::bdfs::response* resp_;
   mutable int _cached_size_;
   friend struct ::protobuf_datanode_2eproto::TableStruct;
   friend void ::protobuf_datanode_2eproto::InitDefaultsdisconnect_respImpl();
@@ -2089,32 +2119,32 @@ inline void fsserver_meta::set_keepalive_timeout(::google::protobuf::int32 value
 
 // connect_req
 
-// .bdfs.MessageMeta meta = 1;
+// .bdfs.message_meta meta = 1;
 inline bool connect_req::has_meta() const {
   return this != internal_default_instance() && meta_ != NULL;
 }
-inline const ::bdfs::MessageMeta& connect_req::meta() const {
-  const ::bdfs::MessageMeta* p = meta_;
+inline const ::bdfs::message_meta& connect_req::meta() const {
+  const ::bdfs::message_meta* p = meta_;
   // @@protoc_insertion_point(field_get:bdfs.connect_req.meta)
-  return p != NULL ? *p : *reinterpret_cast<const ::bdfs::MessageMeta*>(
-      &::bdfs::_MessageMeta_default_instance_);
+  return p != NULL ? *p : *reinterpret_cast<const ::bdfs::message_meta*>(
+      &::bdfs::_message_meta_default_instance_);
 }
-inline ::bdfs::MessageMeta* connect_req::release_meta() {
+inline ::bdfs::message_meta* connect_req::release_meta() {
   // @@protoc_insertion_point(field_release:bdfs.connect_req.meta)
   
-  ::bdfs::MessageMeta* temp = meta_;
+  ::bdfs::message_meta* temp = meta_;
   meta_ = NULL;
   return temp;
 }
-inline ::bdfs::MessageMeta* connect_req::mutable_meta() {
+inline ::bdfs::message_meta* connect_req::mutable_meta() {
   
   if (meta_ == NULL) {
-    meta_ = new ::bdfs::MessageMeta;
+    meta_ = new ::bdfs::message_meta;
   }
   // @@protoc_insertion_point(field_mutable:bdfs.connect_req.meta)
   return meta_;
 }
-inline void connect_req::set_allocated_meta(::bdfs::MessageMeta* meta) {
+inline void connect_req::set_allocated_meta(::bdfs::message_meta* meta) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(meta_);
@@ -2187,32 +2217,32 @@ inline void connect_req::set_allocated__datanode(::bdfs::datanode* _datanode) {
 
 // connect_resp
 
-// .bdfs.MessageMeta meta = 1;
+// .bdfs.message_meta meta = 1;
 inline bool connect_resp::has_meta() const {
   return this != internal_default_instance() && meta_ != NULL;
 }
-inline const ::bdfs::MessageMeta& connect_resp::meta() const {
-  const ::bdfs::MessageMeta* p = meta_;
+inline const ::bdfs::message_meta& connect_resp::meta() const {
+  const ::bdfs::message_meta* p = meta_;
   // @@protoc_insertion_point(field_get:bdfs.connect_resp.meta)
-  return p != NULL ? *p : *reinterpret_cast<const ::bdfs::MessageMeta*>(
-      &::bdfs::_MessageMeta_default_instance_);
+  return p != NULL ? *p : *reinterpret_cast<const ::bdfs::message_meta*>(
+      &::bdfs::_message_meta_default_instance_);
 }
-inline ::bdfs::MessageMeta* connect_resp::release_meta() {
+inline ::bdfs::message_meta* connect_resp::release_meta() {
   // @@protoc_insertion_point(field_release:bdfs.connect_resp.meta)
   
-  ::bdfs::MessageMeta* temp = meta_;
+  ::bdfs::message_meta* temp = meta_;
   meta_ = NULL;
   return temp;
 }
-inline ::bdfs::MessageMeta* connect_resp::mutable_meta() {
+inline ::bdfs::message_meta* connect_resp::mutable_meta() {
   
   if (meta_ == NULL) {
-    meta_ = new ::bdfs::MessageMeta;
+    meta_ = new ::bdfs::message_meta;
   }
   // @@protoc_insertion_point(field_mutable:bdfs.connect_resp.meta)
   return meta_;
 }
-inline void connect_resp::set_allocated_meta(::bdfs::MessageMeta* meta) {
+inline void connect_resp::set_allocated_meta(::bdfs::message_meta* meta) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(meta_);
@@ -2231,7 +2261,51 @@ inline void connect_resp::set_allocated_meta(::bdfs::MessageMeta* meta) {
   // @@protoc_insertion_point(field_set_allocated:bdfs.connect_resp.meta)
 }
 
-// .bdfs.fsserver_meta server_meta = 2;
+// .bdfs.response resp = 2;
+inline bool connect_resp::has_resp() const {
+  return this != internal_default_instance() && resp_ != NULL;
+}
+inline const ::bdfs::response& connect_resp::resp() const {
+  const ::bdfs::response* p = resp_;
+  // @@protoc_insertion_point(field_get:bdfs.connect_resp.resp)
+  return p != NULL ? *p : *reinterpret_cast<const ::bdfs::response*>(
+      &::bdfs::_response_default_instance_);
+}
+inline ::bdfs::response* connect_resp::release_resp() {
+  // @@protoc_insertion_point(field_release:bdfs.connect_resp.resp)
+  
+  ::bdfs::response* temp = resp_;
+  resp_ = NULL;
+  return temp;
+}
+inline ::bdfs::response* connect_resp::mutable_resp() {
+  
+  if (resp_ == NULL) {
+    resp_ = new ::bdfs::response;
+  }
+  // @@protoc_insertion_point(field_mutable:bdfs.connect_resp.resp)
+  return resp_;
+}
+inline void connect_resp::set_allocated_resp(::bdfs::response* resp) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(resp_);
+  }
+  if (resp) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      resp = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, resp, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  resp_ = resp;
+  // @@protoc_insertion_point(field_set_allocated:bdfs.connect_resp.resp)
+}
+
+// .bdfs.fsserver_meta server_meta = 3;
 inline bool connect_resp::has_server_meta() const {
   return this != internal_default_instance() && server_meta_ != NULL;
 }
@@ -2285,32 +2359,32 @@ inline void connect_resp::set_allocated_server_meta(::bdfs::fsserver_meta* serve
 
 // keepalive_req
 
-// .bdfs.MessageMeta meta = 1;
+// .bdfs.message_meta meta = 1;
 inline bool keepalive_req::has_meta() const {
   return this != internal_default_instance() && meta_ != NULL;
 }
-inline const ::bdfs::MessageMeta& keepalive_req::meta() const {
-  const ::bdfs::MessageMeta* p = meta_;
+inline const ::bdfs::message_meta& keepalive_req::meta() const {
+  const ::bdfs::message_meta* p = meta_;
   // @@protoc_insertion_point(field_get:bdfs.keepalive_req.meta)
-  return p != NULL ? *p : *reinterpret_cast<const ::bdfs::MessageMeta*>(
-      &::bdfs::_MessageMeta_default_instance_);
+  return p != NULL ? *p : *reinterpret_cast<const ::bdfs::message_meta*>(
+      &::bdfs::_message_meta_default_instance_);
 }
-inline ::bdfs::MessageMeta* keepalive_req::release_meta() {
+inline ::bdfs::message_meta* keepalive_req::release_meta() {
   // @@protoc_insertion_point(field_release:bdfs.keepalive_req.meta)
   
-  ::bdfs::MessageMeta* temp = meta_;
+  ::bdfs::message_meta* temp = meta_;
   meta_ = NULL;
   return temp;
 }
-inline ::bdfs::MessageMeta* keepalive_req::mutable_meta() {
+inline ::bdfs::message_meta* keepalive_req::mutable_meta() {
   
   if (meta_ == NULL) {
-    meta_ = new ::bdfs::MessageMeta;
+    meta_ = new ::bdfs::message_meta;
   }
   // @@protoc_insertion_point(field_mutable:bdfs.keepalive_req.meta)
   return meta_;
 }
-inline void keepalive_req::set_allocated_meta(::bdfs::MessageMeta* meta) {
+inline void keepalive_req::set_allocated_meta(::bdfs::message_meta* meta) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(meta_);
@@ -2397,32 +2471,32 @@ inline void keepalive_req::set_keepalive_id(::google::protobuf::int32 value) {
 
 // keepalive_resp
 
-// .bdfs.MessageMeta meta = 1;
+// .bdfs.message_meta meta = 1;
 inline bool keepalive_resp::has_meta() const {
   return this != internal_default_instance() && meta_ != NULL;
 }
-inline const ::bdfs::MessageMeta& keepalive_resp::meta() const {
-  const ::bdfs::MessageMeta* p = meta_;
+inline const ::bdfs::message_meta& keepalive_resp::meta() const {
+  const ::bdfs::message_meta* p = meta_;
   // @@protoc_insertion_point(field_get:bdfs.keepalive_resp.meta)
-  return p != NULL ? *p : *reinterpret_cast<const ::bdfs::MessageMeta*>(
-      &::bdfs::_MessageMeta_default_instance_);
+  return p != NULL ? *p : *reinterpret_cast<const ::bdfs::message_meta*>(
+      &::bdfs::_message_meta_default_instance_);
 }
-inline ::bdfs::MessageMeta* keepalive_resp::release_meta() {
+inline ::bdfs::message_meta* keepalive_resp::release_meta() {
   // @@protoc_insertion_point(field_release:bdfs.keepalive_resp.meta)
   
-  ::bdfs::MessageMeta* temp = meta_;
+  ::bdfs::message_meta* temp = meta_;
   meta_ = NULL;
   return temp;
 }
-inline ::bdfs::MessageMeta* keepalive_resp::mutable_meta() {
+inline ::bdfs::message_meta* keepalive_resp::mutable_meta() {
   
   if (meta_ == NULL) {
-    meta_ = new ::bdfs::MessageMeta;
+    meta_ = new ::bdfs::message_meta;
   }
   // @@protoc_insertion_point(field_mutable:bdfs.keepalive_resp.meta)
   return meta_;
 }
-inline void keepalive_resp::set_allocated_meta(::bdfs::MessageMeta* meta) {
+inline void keepalive_resp::set_allocated_meta(::bdfs::message_meta* meta) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(meta_);
@@ -2441,7 +2515,51 @@ inline void keepalive_resp::set_allocated_meta(::bdfs::MessageMeta* meta) {
   // @@protoc_insertion_point(field_set_allocated:bdfs.keepalive_resp.meta)
 }
 
-// string nodename = 2;
+// .bdfs.response resp = 2;
+inline bool keepalive_resp::has_resp() const {
+  return this != internal_default_instance() && resp_ != NULL;
+}
+inline const ::bdfs::response& keepalive_resp::resp() const {
+  const ::bdfs::response* p = resp_;
+  // @@protoc_insertion_point(field_get:bdfs.keepalive_resp.resp)
+  return p != NULL ? *p : *reinterpret_cast<const ::bdfs::response*>(
+      &::bdfs::_response_default_instance_);
+}
+inline ::bdfs::response* keepalive_resp::release_resp() {
+  // @@protoc_insertion_point(field_release:bdfs.keepalive_resp.resp)
+  
+  ::bdfs::response* temp = resp_;
+  resp_ = NULL;
+  return temp;
+}
+inline ::bdfs::response* keepalive_resp::mutable_resp() {
+  
+  if (resp_ == NULL) {
+    resp_ = new ::bdfs::response;
+  }
+  // @@protoc_insertion_point(field_mutable:bdfs.keepalive_resp.resp)
+  return resp_;
+}
+inline void keepalive_resp::set_allocated_resp(::bdfs::response* resp) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(resp_);
+  }
+  if (resp) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      resp = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, resp, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  resp_ = resp;
+  // @@protoc_insertion_point(field_set_allocated:bdfs.keepalive_resp.resp)
+}
+
+// string nodename = 3;
 inline void keepalive_resp::clear_nodename() {
   nodename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -2498,32 +2616,32 @@ inline void keepalive_resp::set_allocated_nodename(::std::string* nodename) {
 
 // disconnect_req
 
-// .bdfs.MessageMeta meta = 1;
+// .bdfs.message_meta meta = 1;
 inline bool disconnect_req::has_meta() const {
   return this != internal_default_instance() && meta_ != NULL;
 }
-inline const ::bdfs::MessageMeta& disconnect_req::meta() const {
-  const ::bdfs::MessageMeta* p = meta_;
+inline const ::bdfs::message_meta& disconnect_req::meta() const {
+  const ::bdfs::message_meta* p = meta_;
   // @@protoc_insertion_point(field_get:bdfs.disconnect_req.meta)
-  return p != NULL ? *p : *reinterpret_cast<const ::bdfs::MessageMeta*>(
-      &::bdfs::_MessageMeta_default_instance_);
+  return p != NULL ? *p : *reinterpret_cast<const ::bdfs::message_meta*>(
+      &::bdfs::_message_meta_default_instance_);
 }
-inline ::bdfs::MessageMeta* disconnect_req::release_meta() {
+inline ::bdfs::message_meta* disconnect_req::release_meta() {
   // @@protoc_insertion_point(field_release:bdfs.disconnect_req.meta)
   
-  ::bdfs::MessageMeta* temp = meta_;
+  ::bdfs::message_meta* temp = meta_;
   meta_ = NULL;
   return temp;
 }
-inline ::bdfs::MessageMeta* disconnect_req::mutable_meta() {
+inline ::bdfs::message_meta* disconnect_req::mutable_meta() {
   
   if (meta_ == NULL) {
-    meta_ = new ::bdfs::MessageMeta;
+    meta_ = new ::bdfs::message_meta;
   }
   // @@protoc_insertion_point(field_mutable:bdfs.disconnect_req.meta)
   return meta_;
 }
-inline void disconnect_req::set_allocated_meta(::bdfs::MessageMeta* meta) {
+inline void disconnect_req::set_allocated_meta(::bdfs::message_meta* meta) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(meta_);
@@ -2652,32 +2770,32 @@ inline void disconnect_req::set_allocated_nodename(::std::string* nodename) {
 
 // disconnect_resp
 
-// .bdfs.MessageMeta meta = 1;
+// .bdfs.message_meta meta = 1;
 inline bool disconnect_resp::has_meta() const {
   return this != internal_default_instance() && meta_ != NULL;
 }
-inline const ::bdfs::MessageMeta& disconnect_resp::meta() const {
-  const ::bdfs::MessageMeta* p = meta_;
+inline const ::bdfs::message_meta& disconnect_resp::meta() const {
+  const ::bdfs::message_meta* p = meta_;
   // @@protoc_insertion_point(field_get:bdfs.disconnect_resp.meta)
-  return p != NULL ? *p : *reinterpret_cast<const ::bdfs::MessageMeta*>(
-      &::bdfs::_MessageMeta_default_instance_);
+  return p != NULL ? *p : *reinterpret_cast<const ::bdfs::message_meta*>(
+      &::bdfs::_message_meta_default_instance_);
 }
-inline ::bdfs::MessageMeta* disconnect_resp::release_meta() {
+inline ::bdfs::message_meta* disconnect_resp::release_meta() {
   // @@protoc_insertion_point(field_release:bdfs.disconnect_resp.meta)
   
-  ::bdfs::MessageMeta* temp = meta_;
+  ::bdfs::message_meta* temp = meta_;
   meta_ = NULL;
   return temp;
 }
-inline ::bdfs::MessageMeta* disconnect_resp::mutable_meta() {
+inline ::bdfs::message_meta* disconnect_resp::mutable_meta() {
   
   if (meta_ == NULL) {
-    meta_ = new ::bdfs::MessageMeta;
+    meta_ = new ::bdfs::message_meta;
   }
   // @@protoc_insertion_point(field_mutable:bdfs.disconnect_resp.meta)
   return meta_;
 }
-inline void disconnect_resp::set_allocated_meta(::bdfs::MessageMeta* meta) {
+inline void disconnect_resp::set_allocated_meta(::bdfs::message_meta* meta) {
   ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
   if (message_arena == NULL) {
     delete reinterpret_cast< ::google::protobuf::MessageLite*>(meta_);
@@ -2696,7 +2814,51 @@ inline void disconnect_resp::set_allocated_meta(::bdfs::MessageMeta* meta) {
   // @@protoc_insertion_point(field_set_allocated:bdfs.disconnect_resp.meta)
 }
 
-// string ipaddress = 2;
+// .bdfs.response resp = 2;
+inline bool disconnect_resp::has_resp() const {
+  return this != internal_default_instance() && resp_ != NULL;
+}
+inline const ::bdfs::response& disconnect_resp::resp() const {
+  const ::bdfs::response* p = resp_;
+  // @@protoc_insertion_point(field_get:bdfs.disconnect_resp.resp)
+  return p != NULL ? *p : *reinterpret_cast<const ::bdfs::response*>(
+      &::bdfs::_response_default_instance_);
+}
+inline ::bdfs::response* disconnect_resp::release_resp() {
+  // @@protoc_insertion_point(field_release:bdfs.disconnect_resp.resp)
+  
+  ::bdfs::response* temp = resp_;
+  resp_ = NULL;
+  return temp;
+}
+inline ::bdfs::response* disconnect_resp::mutable_resp() {
+  
+  if (resp_ == NULL) {
+    resp_ = new ::bdfs::response;
+  }
+  // @@protoc_insertion_point(field_mutable:bdfs.disconnect_resp.resp)
+  return resp_;
+}
+inline void disconnect_resp::set_allocated_resp(::bdfs::response* resp) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete reinterpret_cast< ::google::protobuf::MessageLite*>(resp_);
+  }
+  if (resp) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      resp = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, resp, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  resp_ = resp;
+  // @@protoc_insertion_point(field_set_allocated:bdfs.disconnect_resp.resp)
+}
+
+// string ipaddress = 3;
 inline void disconnect_resp::clear_ipaddress() {
   ipaddress_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -2749,7 +2911,7 @@ inline void disconnect_resp::set_allocated_ipaddress(::std::string* ipaddress) {
   // @@protoc_insertion_point(field_set_allocated:bdfs.disconnect_resp.ipaddress)
 }
 
-// string nodename = 3;
+// string nodename = 4;
 inline void disconnect_resp::clear_nodename() {
   nodename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }

@@ -4,11 +4,11 @@ package bdfs;
 message Empty {
 }
 
-message MessageMeta {
+message message_meta {
     uint64 id = 1;
 }
 
-message Response {
+message response {
     enum Resp {
         NA = 0;
         SUCCESS = 1;

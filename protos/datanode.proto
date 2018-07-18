@@ -37,36 +37,39 @@ message fsserver_meta {
 }
 
 message connect_req {
-    MessageMeta meta = 1;
+    message_meta meta = 1;
     datanode _datanode = 2;
 }
 
 message connect_resp {
-    MessageMeta meta = 1;
-	fsserver_meta server_meta = 2;
+    message_meta meta = 1;
+    response resp = 2;
+	fsserver_meta server_meta = 3;
 }
 
 message keepalive_req {
-    MessageMeta meta = 1;
+    message_meta meta = 1;
     node_meta node = 2;
     int32 keepalive_id = 3;
 }
 
 message keepalive_resp {
-    MessageMeta meta = 1;
-    string nodename = 2;
+    message_meta meta = 1;
+    response resp = 2;
+    string nodename = 3;
 }
 
 message disconnect_req {
-    MessageMeta meta = 1;
+    message_meta meta = 1;
     string ipaddress = 2;
     string nodename = 3;
 }
 
 message disconnect_resp {
-    MessageMeta meta = 1;
-    string ipaddress = 2;
-    string nodename = 3;
+    message_meta meta = 1;
+    response resp = 2;
+    string ipaddress = 3;
+    string nodename = 4;
 }
 
 service datanode_protocol {

@@ -7,6 +7,10 @@ protos: ./protos/*.proto
 	g++ -std=c++11 `pkg-config --cflags protobuf grpc`  -c -o out/datanode.pb.o proto-out/datanode.pb.cc
 	protoc -I protos --grpc_out=proto-out --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` protos/datanode.proto
 	g++ -std=c++11 `pkg-config --cflags protobuf grpc`  -c -o out/datanode.grpc.pb.o proto-out/datanode.grpc.pb.cc
+	protoc -I protos --cpp_out=proto-out protos/datanode_server.proto
+	g++ -std=c++11 `pkg-config --cflags protobuf grpc`  -c -o out/datanode_server.pb.o proto-out/datanode_server.pb.cc
+	protoc -I protos --grpc_out=proto-out --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` protos/datanode_server.proto
+	g++ -std=c++11 `pkg-config --cflags protobuf grpc`  -c -o out/datanode_server.grpc.pb.o proto-out/datanode_server.grpc.pb.cc
 
 #out/datanode.pb.o: protos
 #out/datanode.grpc.pb.o: protos

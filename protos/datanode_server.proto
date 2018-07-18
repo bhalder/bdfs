@@ -1,0 +1,40 @@
+syntax = "proto3";
+package bdfs;
+
+import "types.proto";
+
+message replicas_req {
+    message_meta meta = 1;
+}
+
+message replicas_resp {
+    message_meta meta = 1;
+    response resp = 2;
+}
+
+message get_block_req {
+    message_meta meta = 1;
+}
+
+message get_block_resp {
+    message_meta meta = 1;
+    response resp = 2;
+}
+
+message send_block_req {
+    message_meta meta = 1;
+
+}
+
+message send_block_resp {
+    message_meta meta = 1;
+    response resp = 2;
+}
+
+service datanode_server {
+    rpc get_replicas(replicas_req) returns (replicas_resp);
+    rpc get_block(get_block_req) returns (get_block_resp);
+    rpc send_block(send_block_req) returns (send_block_resp);
+}
+
+
