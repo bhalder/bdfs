@@ -1,8 +1,7 @@
 syntax = "proto3";
 package bdfs;
 
-message Empty {
-}
+import "types.proto"; 
 
 message node_meta {
     string _name = 1;
@@ -38,30 +37,36 @@ message fsserver_meta {
 }
 
 message connect_req {
-    datanode _datanode = 1;
+    MessageMeta meta = 1;
+    datanode _datanode = 2;
 }
 
 message connect_resp {
-	fsserver_meta server_meta = 1;
+    MessageMeta meta = 1;
+	fsserver_meta server_meta = 2;
 }
 
 message keepalive_req {
-    node_meta node = 1;
-    int32 keepalive_id = 2;
+    MessageMeta meta = 1;
+    node_meta node = 2;
+    int32 keepalive_id = 3;
 }
 
 message keepalive_resp {
-    string nodename = 1;
+    MessageMeta meta = 1;
+    string nodename = 2;
 }
 
 message disconnect_req {
-    string ipaddress = 1;
-    string nodename = 2;
+    MessageMeta meta = 1;
+    string ipaddress = 2;
+    string nodename = 3;
 }
 
 message disconnect_resp {
-    string ipaddress = 1;
-    string nodename = 2;
+    MessageMeta meta = 1;
+    string ipaddress = 2;
+    string nodename = 3;
 }
 
 service datanode_protocol {

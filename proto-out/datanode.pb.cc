@@ -20,11 +20,6 @@
 #endif
 // @@protoc_insertion_point(includes)
 namespace bdfs {
-class EmptyDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Empty>
-      _instance;
-} _Empty_default_instance_;
 class node_metaDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<node_meta>
@@ -87,27 +82,6 @@ class disconnect_respDefaultTypeInternal {
 } _disconnect_resp_default_instance_;
 }  // namespace bdfs
 namespace protobuf_datanode_2eproto {
-void InitDefaultsEmptyImpl() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  ::google::protobuf::internal::InitProtobufDefaultsForceUnique();
-#else
-  ::google::protobuf::internal::InitProtobufDefaults();
-#endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-  {
-    void* ptr = &::bdfs::_Empty_default_instance_;
-    new (ptr) ::bdfs::Empty();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::bdfs::Empty::InitAsDefaultInstance();
-}
-
-void InitDefaultsEmpty() {
-  static GOOGLE_PROTOBUF_DECLARE_ONCE(once);
-  ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsEmptyImpl);
-}
-
 void InitDefaultsnode_metaImpl() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -248,6 +222,7 @@ void InitDefaultsconnect_reqImpl() {
 #else
   ::google::protobuf::internal::InitProtobufDefaults();
 #endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_types_2eproto::InitDefaultsMessageMeta();
   protobuf_datanode_2eproto::InitDefaultsdatanode();
   {
     void* ptr = &::bdfs::_connect_req_default_instance_;
@@ -270,6 +245,7 @@ void InitDefaultsconnect_respImpl() {
 #else
   ::google::protobuf::internal::InitProtobufDefaults();
 #endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_types_2eproto::InitDefaultsMessageMeta();
   protobuf_datanode_2eproto::InitDefaultsfsserver_meta();
   {
     void* ptr = &::bdfs::_connect_resp_default_instance_;
@@ -292,6 +268,7 @@ void InitDefaultskeepalive_reqImpl() {
 #else
   ::google::protobuf::internal::InitProtobufDefaults();
 #endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_types_2eproto::InitDefaultsMessageMeta();
   protobuf_datanode_2eproto::InitDefaultsnode_meta();
   {
     void* ptr = &::bdfs::_keepalive_req_default_instance_;
@@ -314,6 +291,7 @@ void InitDefaultskeepalive_respImpl() {
 #else
   ::google::protobuf::internal::InitProtobufDefaults();
 #endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_types_2eproto::InitDefaultsMessageMeta();
   {
     void* ptr = &::bdfs::_keepalive_resp_default_instance_;
     new (ptr) ::bdfs::keepalive_resp();
@@ -335,6 +313,7 @@ void InitDefaultsdisconnect_reqImpl() {
 #else
   ::google::protobuf::internal::InitProtobufDefaults();
 #endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_types_2eproto::InitDefaultsMessageMeta();
   {
     void* ptr = &::bdfs::_disconnect_req_default_instance_;
     new (ptr) ::bdfs::disconnect_req();
@@ -356,6 +335,7 @@ void InitDefaultsdisconnect_respImpl() {
 #else
   ::google::protobuf::internal::InitProtobufDefaults();
 #endif  // GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
+  protobuf_types_2eproto::InitDefaultsMessageMeta();
   {
     void* ptr = &::bdfs::_disconnect_resp_default_instance_;
     new (ptr) ::bdfs::disconnect_resp();
@@ -369,14 +349,9 @@ void InitDefaultsdisconnect_resp() {
   ::google::protobuf::GoogleOnceInit(&once, &InitDefaultsdisconnect_respImpl);
 }
 
-::google::protobuf::Metadata file_level_metadata[13];
+::google::protobuf::Metadata file_level_metadata[12];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::Empty, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::node_meta, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -427,18 +402,21 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::connect_req, meta_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::connect_req, _datanode_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::connect_resp, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::connect_resp, meta_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::connect_resp, server_meta_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::keepalive_req, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::keepalive_req, meta_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::keepalive_req, node_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::keepalive_req, keepalive_id_),
   ~0u,  // no _has_bits_
@@ -446,12 +424,14 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::keepalive_resp, meta_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::keepalive_resp, nodename_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::disconnect_req, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::disconnect_req, meta_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::disconnect_req, ipaddress_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::disconnect_req, nodename_),
   ~0u,  // no _has_bits_
@@ -459,27 +439,26 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::disconnect_resp, meta_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::disconnect_resp, ipaddress_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::bdfs::disconnect_resp, nodename_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::bdfs::Empty)},
-  { 5, -1, sizeof(::bdfs::node_meta)},
-  { 12, -1, sizeof(::bdfs::msg_meta)},
-  { 20, -1, sizeof(::bdfs::datanode)},
-  { 27, -1, sizeof(::bdfs::datablock_meta)},
-  { 36, -1, sizeof(::bdfs::block_summary)},
-  { 43, -1, sizeof(::bdfs::fsserver_meta)},
-  { 50, -1, sizeof(::bdfs::connect_req)},
-  { 56, -1, sizeof(::bdfs::connect_resp)},
-  { 62, -1, sizeof(::bdfs::keepalive_req)},
-  { 69, -1, sizeof(::bdfs::keepalive_resp)},
-  { 75, -1, sizeof(::bdfs::disconnect_req)},
+  { 0, -1, sizeof(::bdfs::node_meta)},
+  { 7, -1, sizeof(::bdfs::msg_meta)},
+  { 15, -1, sizeof(::bdfs::datanode)},
+  { 22, -1, sizeof(::bdfs::datablock_meta)},
+  { 31, -1, sizeof(::bdfs::block_summary)},
+  { 38, -1, sizeof(::bdfs::fsserver_meta)},
+  { 45, -1, sizeof(::bdfs::connect_req)},
+  { 52, -1, sizeof(::bdfs::connect_resp)},
+  { 59, -1, sizeof(::bdfs::keepalive_req)},
+  { 67, -1, sizeof(::bdfs::keepalive_resp)},
+  { 74, -1, sizeof(::bdfs::disconnect_req)},
   { 82, -1, sizeof(::bdfs::disconnect_resp)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::bdfs::_Empty_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::bdfs::_node_meta_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::bdfs::_msg_meta_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::bdfs::_datanode_default_instance_),
@@ -510,44 +489,50 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 13);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 12);
 }
 
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\016datanode.proto\022\004bdfs\"\007\n\005Empty\"\'\n\tnode_"
-      "meta\022\r\n\005_name\030\001 \001(\t\022\013\n\003_ip\030\002 \001(\t\"C\n\010msg_"
-      "meta\022\n\n\002id\030\001 \001(\003\022\014\n\004type\030\002 \001(\005\022\035\n\004from\030\003"
-      " \001(\0132\017.bdfs.node_meta\":\n\010datanode\022\036\n\005_me"
-      "ta\030\001 \001(\0132\017.bdfs.node_meta\022\016\n\006sizeGB\030\003 \001("
-      "\003\"n\n\016datablock_meta\022\014\n\004name\030\001 \001(\t\022\014\n\004has"
-      "h\030\002 \001(\003\022\031\n\021replication_count\030\003 \001(\005\022%\n\rre"
-      "plica_nodes\030\004 \003(\0132\016.bdfs.datanode\"Y\n\rblo"
-      "ck_summary\022\"\n\tdata_meta\030\001 \001(\0132\017.bdfs.nod"
-      "e_meta\022$\n\006blocks\030\002 \003(\0132\024.bdfs.datablock_"
-      "meta\"J\n\rfsserver_meta\022\036\n\005_meta\030\001 \001(\0132\017.b"
-      "dfs.node_meta\022\031\n\021keepalive_timeout\030\002 \001(\005"
-      "\"0\n\013connect_req\022!\n\t_datanode\030\001 \001(\0132\016.bdf"
-      "s.datanode\"8\n\014connect_resp\022(\n\013server_met"
-      "a\030\001 \001(\0132\023.bdfs.fsserver_meta\"D\n\rkeepaliv"
-      "e_req\022\035\n\004node\030\001 \001(\0132\017.bdfs.node_meta\022\024\n\014"
-      "keepalive_id\030\002 \001(\005\"\"\n\016keepalive_resp\022\020\n\010"
-      "nodename\030\001 \001(\t\"5\n\016disconnect_req\022\021\n\tipad"
-      "dress\030\001 \001(\t\022\020\n\010nodename\030\002 \001(\t\"6\n\017disconn"
-      "ect_resp\022\021\n\tipaddress\030\001 \001(\t\022\020\n\010nodename\030"
-      "\002 \001(\t2\202\002\n\021datanode_protocol\0226\n\013SendConne"
-      "ct\022\021.bdfs.connect_req\032\022.bdfs.connect_res"
-      "p\"\000\022<\n\rSendKeepalive\022\023.bdfs.keepalive_re"
-      "q\032\024.bdfs.keepalive_resp\"\000\0226\n\020SendBlockSu"
-      "mmary\022\023.bdfs.block_summary\032\013.bdfs.Empty\""
-      "\000\022\?\n\016SendDisconnect\022\024.bdfs.disconnect_re"
-      "q\032\025.bdfs.disconnect_resp\"\000b\006proto3"
+      "\n\016datanode.proto\022\004bdfs\032\013types.proto\"\'\n\tn"
+      "ode_meta\022\r\n\005_name\030\001 \001(\t\022\013\n\003_ip\030\002 \001(\t\"C\n\010"
+      "msg_meta\022\n\n\002id\030\001 \001(\003\022\014\n\004type\030\002 \001(\005\022\035\n\004fr"
+      "om\030\003 \001(\0132\017.bdfs.node_meta\":\n\010datanode\022\036\n"
+      "\005_meta\030\001 \001(\0132\017.bdfs.node_meta\022\016\n\006sizeGB\030"
+      "\003 \001(\003\"n\n\016datablock_meta\022\014\n\004name\030\001 \001(\t\022\014\n"
+      "\004hash\030\002 \001(\003\022\031\n\021replication_count\030\003 \001(\005\022%"
+      "\n\rreplica_nodes\030\004 \003(\0132\016.bdfs.datanode\"Y\n"
+      "\rblock_summary\022\"\n\tdata_meta\030\001 \001(\0132\017.bdfs"
+      ".node_meta\022$\n\006blocks\030\002 \003(\0132\024.bdfs.databl"
+      "ock_meta\"J\n\rfsserver_meta\022\036\n\005_meta\030\001 \001(\013"
+      "2\017.bdfs.node_meta\022\031\n\021keepalive_timeout\030\002"
+      " \001(\005\"Q\n\013connect_req\022\037\n\004meta\030\001 \001(\0132\021.bdfs"
+      ".MessageMeta\022!\n\t_datanode\030\002 \001(\0132\016.bdfs.d"
+      "atanode\"Y\n\014connect_resp\022\037\n\004meta\030\001 \001(\0132\021."
+      "bdfs.MessageMeta\022(\n\013server_meta\030\002 \001(\0132\023."
+      "bdfs.fsserver_meta\"e\n\rkeepalive_req\022\037\n\004m"
+      "eta\030\001 \001(\0132\021.bdfs.MessageMeta\022\035\n\004node\030\002 \001"
+      "(\0132\017.bdfs.node_meta\022\024\n\014keepalive_id\030\003 \001("
+      "\005\"C\n\016keepalive_resp\022\037\n\004meta\030\001 \001(\0132\021.bdfs"
+      ".MessageMeta\022\020\n\010nodename\030\002 \001(\t\"V\n\016discon"
+      "nect_req\022\037\n\004meta\030\001 \001(\0132\021.bdfs.MessageMet"
+      "a\022\021\n\tipaddress\030\002 \001(\t\022\020\n\010nodename\030\003 \001(\t\"W"
+      "\n\017disconnect_resp\022\037\n\004meta\030\001 \001(\0132\021.bdfs.M"
+      "essageMeta\022\021\n\tipaddress\030\002 \001(\t\022\020\n\010nodenam"
+      "e\030\003 \001(\t2\202\002\n\021datanode_protocol\0226\n\013SendCon"
+      "nect\022\021.bdfs.connect_req\032\022.bdfs.connect_r"
+      "esp\"\000\022<\n\rSendKeepalive\022\023.bdfs.keepalive_"
+      "req\032\024.bdfs.keepalive_resp\"\000\0226\n\020SendBlock"
+      "Summary\022\023.bdfs.block_summary\032\013.bdfs.Empt"
+      "y\"\000\022\?\n\016SendDisconnect\022\024.bdfs.disconnect_"
+      "req\032\025.bdfs.disconnect_resp\"\000b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1074);
+      descriptor, 1276);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "datanode.proto", &protobuf_RegisterTypes);
+  ::protobuf_types_2eproto::AddDescriptors();
 }
 
 void AddDescriptors() {
@@ -562,200 +547,6 @@ struct StaticDescriptorInitializer {
 } static_descriptor_initializer;
 }  // namespace protobuf_datanode_2eproto
 namespace bdfs {
-
-// ===================================================================
-
-void Empty::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-Empty::Empty()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
-    ::protobuf_datanode_2eproto::InitDefaultsEmpty();
-  }
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:bdfs.Empty)
-}
-Empty::Empty(const Empty& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _cached_size_(0) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:bdfs.Empty)
-}
-
-void Empty::SharedCtor() {
-  _cached_size_ = 0;
-}
-
-Empty::~Empty() {
-  // @@protoc_insertion_point(destructor:bdfs.Empty)
-  SharedDtor();
-}
-
-void Empty::SharedDtor() {
-}
-
-void Empty::SetCachedSize(int size) const {
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-}
-const ::google::protobuf::Descriptor* Empty::descriptor() {
-  ::protobuf_datanode_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_datanode_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
-const Empty& Empty::default_instance() {
-  ::protobuf_datanode_2eproto::InitDefaultsEmpty();
-  return *internal_default_instance();
-}
-
-Empty* Empty::New(::google::protobuf::Arena* arena) const {
-  Empty* n = new Empty;
-  if (arena != NULL) {
-    arena->Own(n);
-  }
-  return n;
-}
-
-void Empty::Clear() {
-// @@protoc_insertion_point(message_clear_start:bdfs.Empty)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _internal_metadata_.Clear();
-}
-
-bool Empty::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:bdfs.Empty)
-  for (;;) {
-    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-  handle_unusual:
-    if (tag == 0) {
-      goto success;
-    }
-    DO_(::google::protobuf::internal::WireFormat::SkipField(
-          input, tag, _internal_metadata_.mutable_unknown_fields()));
-  }
-success:
-  // @@protoc_insertion_point(parse_success:bdfs.Empty)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:bdfs.Empty)
-  return false;
-#undef DO_
-}
-
-void Empty::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:bdfs.Empty)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
-  }
-  // @@protoc_insertion_point(serialize_end:bdfs.Empty)
-}
-
-::google::protobuf::uint8* Empty::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:bdfs.Empty)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:bdfs.Empty)
-  return target;
-}
-
-size_t Empty::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:bdfs.Empty)
-  size_t total_size = 0;
-
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-  _cached_size_ = cached_size;
-  GOOGLE_SAFE_CONCURRENT_WRITES_END();
-  return total_size;
-}
-
-void Empty::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:bdfs.Empty)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Empty* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Empty>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:bdfs.Empty)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:bdfs.Empty)
-    MergeFrom(*source);
-  }
-}
-
-void Empty::MergeFrom(const Empty& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:bdfs.Empty)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-}
-
-void Empty::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:bdfs.Empty)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void Empty::CopyFrom(const Empty& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:bdfs.Empty)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool Empty::IsInitialized() const {
-  return true;
-}
-
-void Empty::Swap(Empty* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void Empty::InternalSwap(Empty* other) {
-  using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(_cached_size_, other->_cached_size_);
-}
-
-::google::protobuf::Metadata Empty::GetMetadata() const {
-  protobuf_datanode_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_datanode_2eproto::file_level_metadata[kIndexInFileMessages];
-}
-
 
 // ===================================================================
 
@@ -2650,10 +2441,19 @@ void fsserver_meta::InternalSwap(fsserver_meta* other) {
 // ===================================================================
 
 void connect_req::InitAsDefaultInstance() {
+  ::bdfs::_connect_req_default_instance_._instance.get_mutable()->meta_ = const_cast< ::bdfs::MessageMeta*>(
+      ::bdfs::MessageMeta::internal_default_instance());
   ::bdfs::_connect_req_default_instance_._instance.get_mutable()->_datanode_ = const_cast< ::bdfs::datanode*>(
       ::bdfs::datanode::internal_default_instance());
 }
+void connect_req::clear_meta() {
+  if (GetArenaNoVirtual() == NULL && meta_ != NULL) {
+    delete meta_;
+  }
+  meta_ = NULL;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int connect_req::kMetaFieldNumber;
 const int connect_req::kDatanodeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -2670,6 +2470,11 @@ connect_req::connect_req(const connect_req& from)
       _internal_metadata_(NULL),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_meta()) {
+    meta_ = new ::bdfs::MessageMeta(*from.meta_);
+  } else {
+    meta_ = NULL;
+  }
   if (from.has__datanode()) {
     _datanode_ = new ::bdfs::datanode(*from._datanode_);
   } else {
@@ -2679,7 +2484,9 @@ connect_req::connect_req(const connect_req& from)
 }
 
 void connect_req::SharedCtor() {
-  _datanode_ = NULL;
+  ::memset(&meta_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_datanode_) -
+      reinterpret_cast<char*>(&meta_)) + sizeof(_datanode_));
   _cached_size_ = 0;
 }
 
@@ -2689,6 +2496,7 @@ connect_req::~connect_req() {
 }
 
 void connect_req::SharedDtor() {
+  if (this != internal_default_instance()) delete meta_;
   if (this != internal_default_instance()) delete _datanode_;
 }
 
@@ -2721,6 +2529,10 @@ void connect_req::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  if (GetArenaNoVirtual() == NULL && meta_ != NULL) {
+    delete meta_;
+  }
+  meta_ = NULL;
   if (GetArenaNoVirtual() == NULL && _datanode_ != NULL) {
     delete _datanode_;
   }
@@ -2738,10 +2550,22 @@ bool connect_req::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .bdfs.datanode _datanode = 1;
+      // .bdfs.MessageMeta meta = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_meta()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .bdfs.datanode _datanode = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable__datanode()));
         } else {
@@ -2776,10 +2600,16 @@ void connect_req::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .bdfs.datanode _datanode = 1;
+  // .bdfs.MessageMeta meta = 1;
+  if (this->has_meta()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->meta_, output);
+  }
+
+  // .bdfs.datanode _datanode = 2;
   if (this->has__datanode()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->_datanode_, output);
+      2, *this->_datanode_, output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -2796,11 +2626,18 @@ void connect_req::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .bdfs.datanode _datanode = 1;
+  // .bdfs.MessageMeta meta = 1;
+  if (this->has_meta()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, *this->meta_, deterministic, target);
+  }
+
+  // .bdfs.datanode _datanode = 2;
   if (this->has__datanode()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, *this->_datanode_, deterministic, target);
+        2, *this->_datanode_, deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -2820,7 +2657,14 @@ size_t connect_req::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // .bdfs.datanode _datanode = 1;
+  // .bdfs.MessageMeta meta = 1;
+  if (this->has_meta()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *this->meta_);
+  }
+
+  // .bdfs.datanode _datanode = 2;
   if (this->has__datanode()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
@@ -2856,6 +2700,9 @@ void connect_req::MergeFrom(const connect_req& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.has_meta()) {
+    mutable_meta()->::bdfs::MessageMeta::MergeFrom(from.meta());
+  }
   if (from.has__datanode()) {
     mutable__datanode()->::bdfs::datanode::MergeFrom(from._datanode());
   }
@@ -2885,6 +2732,7 @@ void connect_req::Swap(connect_req* other) {
 }
 void connect_req::InternalSwap(connect_req* other) {
   using std::swap;
+  swap(meta_, other->meta_);
   swap(_datanode_, other->_datanode_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
@@ -2899,10 +2747,19 @@ void connect_req::InternalSwap(connect_req* other) {
 // ===================================================================
 
 void connect_resp::InitAsDefaultInstance() {
+  ::bdfs::_connect_resp_default_instance_._instance.get_mutable()->meta_ = const_cast< ::bdfs::MessageMeta*>(
+      ::bdfs::MessageMeta::internal_default_instance());
   ::bdfs::_connect_resp_default_instance_._instance.get_mutable()->server_meta_ = const_cast< ::bdfs::fsserver_meta*>(
       ::bdfs::fsserver_meta::internal_default_instance());
 }
+void connect_resp::clear_meta() {
+  if (GetArenaNoVirtual() == NULL && meta_ != NULL) {
+    delete meta_;
+  }
+  meta_ = NULL;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int connect_resp::kMetaFieldNumber;
 const int connect_resp::kServerMetaFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -2919,6 +2776,11 @@ connect_resp::connect_resp(const connect_resp& from)
       _internal_metadata_(NULL),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_meta()) {
+    meta_ = new ::bdfs::MessageMeta(*from.meta_);
+  } else {
+    meta_ = NULL;
+  }
   if (from.has_server_meta()) {
     server_meta_ = new ::bdfs::fsserver_meta(*from.server_meta_);
   } else {
@@ -2928,7 +2790,9 @@ connect_resp::connect_resp(const connect_resp& from)
 }
 
 void connect_resp::SharedCtor() {
-  server_meta_ = NULL;
+  ::memset(&meta_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&server_meta_) -
+      reinterpret_cast<char*>(&meta_)) + sizeof(server_meta_));
   _cached_size_ = 0;
 }
 
@@ -2938,6 +2802,7 @@ connect_resp::~connect_resp() {
 }
 
 void connect_resp::SharedDtor() {
+  if (this != internal_default_instance()) delete meta_;
   if (this != internal_default_instance()) delete server_meta_;
 }
 
@@ -2970,6 +2835,10 @@ void connect_resp::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  if (GetArenaNoVirtual() == NULL && meta_ != NULL) {
+    delete meta_;
+  }
+  meta_ = NULL;
   if (GetArenaNoVirtual() == NULL && server_meta_ != NULL) {
     delete server_meta_;
   }
@@ -2987,10 +2856,22 @@ bool connect_resp::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .bdfs.fsserver_meta server_meta = 1;
+      // .bdfs.MessageMeta meta = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_meta()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .bdfs.fsserver_meta server_meta = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_server_meta()));
         } else {
@@ -3025,10 +2906,16 @@ void connect_resp::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .bdfs.fsserver_meta server_meta = 1;
+  // .bdfs.MessageMeta meta = 1;
+  if (this->has_meta()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->meta_, output);
+  }
+
+  // .bdfs.fsserver_meta server_meta = 2;
   if (this->has_server_meta()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->server_meta_, output);
+      2, *this->server_meta_, output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -3045,11 +2932,18 @@ void connect_resp::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .bdfs.fsserver_meta server_meta = 1;
+  // .bdfs.MessageMeta meta = 1;
+  if (this->has_meta()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, *this->meta_, deterministic, target);
+  }
+
+  // .bdfs.fsserver_meta server_meta = 2;
   if (this->has_server_meta()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, *this->server_meta_, deterministic, target);
+        2, *this->server_meta_, deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -3069,7 +2963,14 @@ size_t connect_resp::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // .bdfs.fsserver_meta server_meta = 1;
+  // .bdfs.MessageMeta meta = 1;
+  if (this->has_meta()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *this->meta_);
+  }
+
+  // .bdfs.fsserver_meta server_meta = 2;
   if (this->has_server_meta()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
@@ -3105,6 +3006,9 @@ void connect_resp::MergeFrom(const connect_resp& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.has_meta()) {
+    mutable_meta()->::bdfs::MessageMeta::MergeFrom(from.meta());
+  }
   if (from.has_server_meta()) {
     mutable_server_meta()->::bdfs::fsserver_meta::MergeFrom(from.server_meta());
   }
@@ -3134,6 +3038,7 @@ void connect_resp::Swap(connect_resp* other) {
 }
 void connect_resp::InternalSwap(connect_resp* other) {
   using std::swap;
+  swap(meta_, other->meta_);
   swap(server_meta_, other->server_meta_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
@@ -3148,10 +3053,19 @@ void connect_resp::InternalSwap(connect_resp* other) {
 // ===================================================================
 
 void keepalive_req::InitAsDefaultInstance() {
+  ::bdfs::_keepalive_req_default_instance_._instance.get_mutable()->meta_ = const_cast< ::bdfs::MessageMeta*>(
+      ::bdfs::MessageMeta::internal_default_instance());
   ::bdfs::_keepalive_req_default_instance_._instance.get_mutable()->node_ = const_cast< ::bdfs::node_meta*>(
       ::bdfs::node_meta::internal_default_instance());
 }
+void keepalive_req::clear_meta() {
+  if (GetArenaNoVirtual() == NULL && meta_ != NULL) {
+    delete meta_;
+  }
+  meta_ = NULL;
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int keepalive_req::kMetaFieldNumber;
 const int keepalive_req::kNodeFieldNumber;
 const int keepalive_req::kKeepaliveIdFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -3169,6 +3083,11 @@ keepalive_req::keepalive_req(const keepalive_req& from)
       _internal_metadata_(NULL),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_meta()) {
+    meta_ = new ::bdfs::MessageMeta(*from.meta_);
+  } else {
+    meta_ = NULL;
+  }
   if (from.has_node()) {
     node_ = new ::bdfs::node_meta(*from.node_);
   } else {
@@ -3179,9 +3098,9 @@ keepalive_req::keepalive_req(const keepalive_req& from)
 }
 
 void keepalive_req::SharedCtor() {
-  ::memset(&node_, 0, static_cast<size_t>(
+  ::memset(&meta_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&keepalive_id_) -
-      reinterpret_cast<char*>(&node_)) + sizeof(keepalive_id_));
+      reinterpret_cast<char*>(&meta_)) + sizeof(keepalive_id_));
   _cached_size_ = 0;
 }
 
@@ -3191,6 +3110,7 @@ keepalive_req::~keepalive_req() {
 }
 
 void keepalive_req::SharedDtor() {
+  if (this != internal_default_instance()) delete meta_;
   if (this != internal_default_instance()) delete node_;
 }
 
@@ -3223,6 +3143,10 @@ void keepalive_req::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  if (GetArenaNoVirtual() == NULL && meta_ != NULL) {
+    delete meta_;
+  }
+  meta_ = NULL;
   if (GetArenaNoVirtual() == NULL && node_ != NULL) {
     delete node_;
   }
@@ -3241,10 +3165,22 @@ bool keepalive_req::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .bdfs.node_meta node = 1;
+      // .bdfs.MessageMeta meta = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_meta()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .bdfs.node_meta node = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                input, mutable_node()));
         } else {
@@ -3253,10 +3189,10 @@ bool keepalive_req::MergePartialFromCodedStream(
         break;
       }
 
-      // int32 keepalive_id = 2;
-      case 2: {
+      // int32 keepalive_id = 3;
+      case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
@@ -3293,15 +3229,21 @@ void keepalive_req::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .bdfs.node_meta node = 1;
-  if (this->has_node()) {
+  // .bdfs.MessageMeta meta = 1;
+  if (this->has_meta()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, *this->node_, output);
+      1, *this->meta_, output);
   }
 
-  // int32 keepalive_id = 2;
+  // .bdfs.node_meta node = 2;
+  if (this->has_node()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, *this->node_, output);
+  }
+
+  // int32 keepalive_id = 3;
   if (this->keepalive_id() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->keepalive_id(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->keepalive_id(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -3318,16 +3260,23 @@ void keepalive_req::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .bdfs.node_meta node = 1;
+  // .bdfs.MessageMeta meta = 1;
+  if (this->has_meta()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, *this->meta_, deterministic, target);
+  }
+
+  // .bdfs.node_meta node = 2;
   if (this->has_node()) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, *this->node_, deterministic, target);
+        2, *this->node_, deterministic, target);
   }
 
-  // int32 keepalive_id = 2;
+  // int32 keepalive_id = 3;
   if (this->keepalive_id() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->keepalive_id(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->keepalive_id(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -3347,14 +3296,21 @@ size_t keepalive_req::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // .bdfs.node_meta node = 1;
+  // .bdfs.MessageMeta meta = 1;
+  if (this->has_meta()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *this->meta_);
+  }
+
+  // .bdfs.node_meta node = 2;
   if (this->has_node()) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *this->node_);
   }
 
-  // int32 keepalive_id = 2;
+  // int32 keepalive_id = 3;
   if (this->keepalive_id() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
@@ -3390,6 +3346,9 @@ void keepalive_req::MergeFrom(const keepalive_req& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.has_meta()) {
+    mutable_meta()->::bdfs::MessageMeta::MergeFrom(from.meta());
+  }
   if (from.has_node()) {
     mutable_node()->::bdfs::node_meta::MergeFrom(from.node());
   }
@@ -3422,6 +3381,7 @@ void keepalive_req::Swap(keepalive_req* other) {
 }
 void keepalive_req::InternalSwap(keepalive_req* other) {
   using std::swap;
+  swap(meta_, other->meta_);
   swap(node_, other->node_);
   swap(keepalive_id_, other->keepalive_id_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
@@ -3437,8 +3397,17 @@ void keepalive_req::InternalSwap(keepalive_req* other) {
 // ===================================================================
 
 void keepalive_resp::InitAsDefaultInstance() {
+  ::bdfs::_keepalive_resp_default_instance_._instance.get_mutable()->meta_ = const_cast< ::bdfs::MessageMeta*>(
+      ::bdfs::MessageMeta::internal_default_instance());
+}
+void keepalive_resp::clear_meta() {
+  if (GetArenaNoVirtual() == NULL && meta_ != NULL) {
+    delete meta_;
+  }
+  meta_ = NULL;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int keepalive_resp::kMetaFieldNumber;
 const int keepalive_resp::kNodenameFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -3459,11 +3428,17 @@ keepalive_resp::keepalive_resp(const keepalive_resp& from)
   if (from.nodename().size() > 0) {
     nodename_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nodename_);
   }
+  if (from.has_meta()) {
+    meta_ = new ::bdfs::MessageMeta(*from.meta_);
+  } else {
+    meta_ = NULL;
+  }
   // @@protoc_insertion_point(copy_constructor:bdfs.keepalive_resp)
 }
 
 void keepalive_resp::SharedCtor() {
   nodename_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  meta_ = NULL;
   _cached_size_ = 0;
 }
 
@@ -3474,6 +3449,7 @@ keepalive_resp::~keepalive_resp() {
 
 void keepalive_resp::SharedDtor() {
   nodename_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete meta_;
 }
 
 void keepalive_resp::SetCachedSize(int size) const {
@@ -3506,6 +3482,10 @@ void keepalive_resp::Clear() {
   (void) cached_has_bits;
 
   nodename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == NULL && meta_ != NULL) {
+    delete meta_;
+  }
+  meta_ = NULL;
   _internal_metadata_.Clear();
 }
 
@@ -3519,10 +3499,22 @@ bool keepalive_resp::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string nodename = 1;
+      // .bdfs.MessageMeta meta = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_meta()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string nodename = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_nodename()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -3561,14 +3553,20 @@ void keepalive_resp::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string nodename = 1;
+  // .bdfs.MessageMeta meta = 1;
+  if (this->has_meta()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->meta_, output);
+  }
+
+  // string nodename = 2;
   if (this->nodename().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->nodename().data(), static_cast<int>(this->nodename().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "bdfs.keepalive_resp.nodename");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->nodename(), output);
+      2, this->nodename(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -3585,7 +3583,14 @@ void keepalive_resp::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string nodename = 1;
+  // .bdfs.MessageMeta meta = 1;
+  if (this->has_meta()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, *this->meta_, deterministic, target);
+  }
+
+  // string nodename = 2;
   if (this->nodename().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->nodename().data(), static_cast<int>(this->nodename().length()),
@@ -3593,7 +3598,7 @@ void keepalive_resp::SerializeWithCachedSizes(
       "bdfs.keepalive_resp.nodename");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->nodename(), target);
+        2, this->nodename(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -3613,11 +3618,18 @@ size_t keepalive_resp::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // string nodename = 1;
+  // string nodename = 2;
   if (this->nodename().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->nodename());
+  }
+
+  // .bdfs.MessageMeta meta = 1;
+  if (this->has_meta()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *this->meta_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -3653,6 +3665,9 @@ void keepalive_resp::MergeFrom(const keepalive_resp& from) {
 
     nodename_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nodename_);
   }
+  if (from.has_meta()) {
+    mutable_meta()->::bdfs::MessageMeta::MergeFrom(from.meta());
+  }
 }
 
 void keepalive_resp::CopyFrom(const ::google::protobuf::Message& from) {
@@ -3680,6 +3695,7 @@ void keepalive_resp::Swap(keepalive_resp* other) {
 void keepalive_resp::InternalSwap(keepalive_resp* other) {
   using std::swap;
   nodename_.Swap(&other->nodename_);
+  swap(meta_, other->meta_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
 }
@@ -3693,8 +3709,17 @@ void keepalive_resp::InternalSwap(keepalive_resp* other) {
 // ===================================================================
 
 void disconnect_req::InitAsDefaultInstance() {
+  ::bdfs::_disconnect_req_default_instance_._instance.get_mutable()->meta_ = const_cast< ::bdfs::MessageMeta*>(
+      ::bdfs::MessageMeta::internal_default_instance());
+}
+void disconnect_req::clear_meta() {
+  if (GetArenaNoVirtual() == NULL && meta_ != NULL) {
+    delete meta_;
+  }
+  meta_ = NULL;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int disconnect_req::kMetaFieldNumber;
 const int disconnect_req::kIpaddressFieldNumber;
 const int disconnect_req::kNodenameFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -3720,12 +3745,18 @@ disconnect_req::disconnect_req(const disconnect_req& from)
   if (from.nodename().size() > 0) {
     nodename_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nodename_);
   }
+  if (from.has_meta()) {
+    meta_ = new ::bdfs::MessageMeta(*from.meta_);
+  } else {
+    meta_ = NULL;
+  }
   // @@protoc_insertion_point(copy_constructor:bdfs.disconnect_req)
 }
 
 void disconnect_req::SharedCtor() {
   ipaddress_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   nodename_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  meta_ = NULL;
   _cached_size_ = 0;
 }
 
@@ -3737,6 +3768,7 @@ disconnect_req::~disconnect_req() {
 void disconnect_req::SharedDtor() {
   ipaddress_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   nodename_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete meta_;
 }
 
 void disconnect_req::SetCachedSize(int size) const {
@@ -3770,6 +3802,10 @@ void disconnect_req::Clear() {
 
   ipaddress_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   nodename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == NULL && meta_ != NULL) {
+    delete meta_;
+  }
+  meta_ = NULL;
   _internal_metadata_.Clear();
 }
 
@@ -3783,10 +3819,22 @@ bool disconnect_req::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string ipaddress = 1;
+      // .bdfs.MessageMeta meta = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_meta()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string ipaddress = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_ipaddress()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -3799,10 +3847,10 @@ bool disconnect_req::MergePartialFromCodedStream(
         break;
       }
 
-      // string nodename = 2;
-      case 2: {
+      // string nodename = 3;
+      case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_nodename()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -3841,24 +3889,30 @@ void disconnect_req::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string ipaddress = 1;
+  // .bdfs.MessageMeta meta = 1;
+  if (this->has_meta()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->meta_, output);
+  }
+
+  // string ipaddress = 2;
   if (this->ipaddress().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->ipaddress().data(), static_cast<int>(this->ipaddress().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "bdfs.disconnect_req.ipaddress");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->ipaddress(), output);
+      2, this->ipaddress(), output);
   }
 
-  // string nodename = 2;
+  // string nodename = 3;
   if (this->nodename().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->nodename().data(), static_cast<int>(this->nodename().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "bdfs.disconnect_req.nodename");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->nodename(), output);
+      3, this->nodename(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -3875,7 +3929,14 @@ void disconnect_req::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string ipaddress = 1;
+  // .bdfs.MessageMeta meta = 1;
+  if (this->has_meta()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, *this->meta_, deterministic, target);
+  }
+
+  // string ipaddress = 2;
   if (this->ipaddress().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->ipaddress().data(), static_cast<int>(this->ipaddress().length()),
@@ -3883,10 +3944,10 @@ void disconnect_req::SerializeWithCachedSizes(
       "bdfs.disconnect_req.ipaddress");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->ipaddress(), target);
+        2, this->ipaddress(), target);
   }
 
-  // string nodename = 2;
+  // string nodename = 3;
   if (this->nodename().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->nodename().data(), static_cast<int>(this->nodename().length()),
@@ -3894,7 +3955,7 @@ void disconnect_req::SerializeWithCachedSizes(
       "bdfs.disconnect_req.nodename");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->nodename(), target);
+        3, this->nodename(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -3914,18 +3975,25 @@ size_t disconnect_req::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // string ipaddress = 1;
+  // string ipaddress = 2;
   if (this->ipaddress().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->ipaddress());
   }
 
-  // string nodename = 2;
+  // string nodename = 3;
   if (this->nodename().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->nodename());
+  }
+
+  // .bdfs.MessageMeta meta = 1;
+  if (this->has_meta()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *this->meta_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -3965,6 +4033,9 @@ void disconnect_req::MergeFrom(const disconnect_req& from) {
 
     nodename_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nodename_);
   }
+  if (from.has_meta()) {
+    mutable_meta()->::bdfs::MessageMeta::MergeFrom(from.meta());
+  }
 }
 
 void disconnect_req::CopyFrom(const ::google::protobuf::Message& from) {
@@ -3993,6 +4064,7 @@ void disconnect_req::InternalSwap(disconnect_req* other) {
   using std::swap;
   ipaddress_.Swap(&other->ipaddress_);
   nodename_.Swap(&other->nodename_);
+  swap(meta_, other->meta_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
 }
@@ -4006,8 +4078,17 @@ void disconnect_req::InternalSwap(disconnect_req* other) {
 // ===================================================================
 
 void disconnect_resp::InitAsDefaultInstance() {
+  ::bdfs::_disconnect_resp_default_instance_._instance.get_mutable()->meta_ = const_cast< ::bdfs::MessageMeta*>(
+      ::bdfs::MessageMeta::internal_default_instance());
+}
+void disconnect_resp::clear_meta() {
+  if (GetArenaNoVirtual() == NULL && meta_ != NULL) {
+    delete meta_;
+  }
+  meta_ = NULL;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int disconnect_resp::kMetaFieldNumber;
 const int disconnect_resp::kIpaddressFieldNumber;
 const int disconnect_resp::kNodenameFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -4033,12 +4114,18 @@ disconnect_resp::disconnect_resp(const disconnect_resp& from)
   if (from.nodename().size() > 0) {
     nodename_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nodename_);
   }
+  if (from.has_meta()) {
+    meta_ = new ::bdfs::MessageMeta(*from.meta_);
+  } else {
+    meta_ = NULL;
+  }
   // @@protoc_insertion_point(copy_constructor:bdfs.disconnect_resp)
 }
 
 void disconnect_resp::SharedCtor() {
   ipaddress_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   nodename_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  meta_ = NULL;
   _cached_size_ = 0;
 }
 
@@ -4050,6 +4137,7 @@ disconnect_resp::~disconnect_resp() {
 void disconnect_resp::SharedDtor() {
   ipaddress_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   nodename_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete meta_;
 }
 
 void disconnect_resp::SetCachedSize(int size) const {
@@ -4083,6 +4171,10 @@ void disconnect_resp::Clear() {
 
   ipaddress_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   nodename_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (GetArenaNoVirtual() == NULL && meta_ != NULL) {
+    delete meta_;
+  }
+  meta_ = NULL;
   _internal_metadata_.Clear();
 }
 
@@ -4096,10 +4188,22 @@ bool disconnect_resp::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string ipaddress = 1;
+      // .bdfs.MessageMeta meta = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_meta()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string ipaddress = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_ipaddress()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -4112,10 +4216,10 @@ bool disconnect_resp::MergePartialFromCodedStream(
         break;
       }
 
-      // string nodename = 2;
-      case 2: {
+      // string nodename = 3;
+      case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_nodename()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -4154,24 +4258,30 @@ void disconnect_resp::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string ipaddress = 1;
+  // .bdfs.MessageMeta meta = 1;
+  if (this->has_meta()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->meta_, output);
+  }
+
+  // string ipaddress = 2;
   if (this->ipaddress().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->ipaddress().data(), static_cast<int>(this->ipaddress().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "bdfs.disconnect_resp.ipaddress");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->ipaddress(), output);
+      2, this->ipaddress(), output);
   }
 
-  // string nodename = 2;
+  // string nodename = 3;
   if (this->nodename().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->nodename().data(), static_cast<int>(this->nodename().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
       "bdfs.disconnect_resp.nodename");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->nodename(), output);
+      3, this->nodename(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -4188,7 +4298,14 @@ void disconnect_resp::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string ipaddress = 1;
+  // .bdfs.MessageMeta meta = 1;
+  if (this->has_meta()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, *this->meta_, deterministic, target);
+  }
+
+  // string ipaddress = 2;
   if (this->ipaddress().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->ipaddress().data(), static_cast<int>(this->ipaddress().length()),
@@ -4196,10 +4313,10 @@ void disconnect_resp::SerializeWithCachedSizes(
       "bdfs.disconnect_resp.ipaddress");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->ipaddress(), target);
+        2, this->ipaddress(), target);
   }
 
-  // string nodename = 2;
+  // string nodename = 3;
   if (this->nodename().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
       this->nodename().data(), static_cast<int>(this->nodename().length()),
@@ -4207,7 +4324,7 @@ void disconnect_resp::SerializeWithCachedSizes(
       "bdfs.disconnect_resp.nodename");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->nodename(), target);
+        3, this->nodename(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -4227,18 +4344,25 @@ size_t disconnect_resp::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // string ipaddress = 1;
+  // string ipaddress = 2;
   if (this->ipaddress().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->ipaddress());
   }
 
-  // string nodename = 2;
+  // string nodename = 3;
   if (this->nodename().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->nodename());
+  }
+
+  // .bdfs.MessageMeta meta = 1;
+  if (this->has_meta()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *this->meta_);
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -4278,6 +4402,9 @@ void disconnect_resp::MergeFrom(const disconnect_resp& from) {
 
     nodename_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.nodename_);
   }
+  if (from.has_meta()) {
+    mutable_meta()->::bdfs::MessageMeta::MergeFrom(from.meta());
+  }
 }
 
 void disconnect_resp::CopyFrom(const ::google::protobuf::Message& from) {
@@ -4306,6 +4433,7 @@ void disconnect_resp::InternalSwap(disconnect_resp* other) {
   using std::swap;
   ipaddress_.Swap(&other->ipaddress_);
   nodename_.Swap(&other->nodename_);
+  swap(meta_, other->meta_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
 }

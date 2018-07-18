@@ -1,0 +1,22 @@
+syntax = "proto3";
+package bdfs;
+
+message Empty {
+}
+
+message MessageMeta {
+    uint64 id = 1;
+}
+
+message Response {
+    enum Resp {
+        NA = 0;
+        SUCCESS = 1;
+        FAIL = 2;
+        CATASTROPHIC = 3;
+    }
+
+    Resp response_code = 1;
+    string message = 2;
+}
+
