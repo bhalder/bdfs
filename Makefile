@@ -15,6 +15,10 @@ protos: ./protos/*.proto
 #out/datanode.pb.o: protos
 #out/datanode.grpc.pb.o: protos
 
+datanode_server: out/datanode_server.pb.o out/datanode_server.grpc.pb.o
+	g++ -std=c++11 `pkg-config --cflags protobuf grpc`  -c -o out/DatanodeServer.o Datanode/DatanodeServer.cc -Iproto-out
+	g++ out/datanode_server.pb.o out/datanode_server.grpc.pb.o out/types.pb.o  out/DatanodeServer.o -L/usr/local/lib `pkg-config --libs protobuf grpc++ grpc` -Wl,--no-as-needed -lgrpc++_reflection -Wl,--as-needed -ldl -o out/DatanodeServer
+
 datanode: out/datanode.pb.o out/datanode.grpc.pb.o 
 	g++ -std=c++11 `pkg-config --cflags protobuf grpc`  -c -o out/Datanode.o Datanode/Datanode.cc -Iproto-out
 	g++ out/datanode.pb.o out/datanode.grpc.pb.o out/types.pb.o  out/Datanode.o -L/usr/local/lib `pkg-config --libs protobuf grpc++ grpc` -Wl,--no-as-needed -lgrpc++_reflection -Wl,--as-needed -ldl -o out/Datanode
@@ -23,7 +27,7 @@ fsserver: out/datanode.pb.o out/datanode.grpc.pb.o
 	g++ -std=c++11 `pkg-config --cflags protobuf grpc`  -c -o out/FSServer.o FSServer/FSServer.cc -Iproto-out
 	g++ out/datanode.pb.o out/datanode.grpc.pb.o out/types.pb.o out/FSServer.o -L/usr/local/lib `pkg-config --libs protobuf grpc++ grpc` -Wl,--no-as-needed -lgrpc++_reflection -Wl,--as-needed -ldl -o out/FSServer
 
-all: protos datanode fsserver
+all: protos datanode_server datanode fsserver
 
 .PHONY: protos clean all
 

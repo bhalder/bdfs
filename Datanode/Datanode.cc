@@ -1,6 +1,7 @@
 #include <grpcpp/grpcpp.h>
 #include "../proto-out/datanode.grpc.pb.h"
 #include <unistd.h>
+#include "DatanodeState.hpp"
 
 using grpc::Channel;
 using grpc::ClientContext;
